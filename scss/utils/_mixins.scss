@@ -1,0 +1,17 @@
+@import "./variables";
+
+@mixin ombre ($color: $shadow) {
+    box-shadow: 3px 3px 8px $color;
+}
+
+@mixin btn--gradient {
+    background: linear-gradient(to left top,$primaire,$secondaire);
+}
+
+@mixin btn--gradient--light {
+    background: linear-gradient(to left top, lighten($primaire, 10%), lighten($secondaire, 10%));
+}
+
+@mixin heart--gradient {
+    background: linear-gradient(to top,$secondaire,$primaire);
+}
