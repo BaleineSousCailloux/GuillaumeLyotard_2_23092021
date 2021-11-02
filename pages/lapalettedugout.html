@@ -7,9 +7,9 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap" rel="stylesheet">  
-        <link rel="stylesheet" type="text/css" href="../css/resto-mobile.css"/>
-        <link rel="stylesheet" type="text/css" media="all and (min-width: 768px)" href="../css/resto-tab.css"/>
-        <link rel="stylesheet" type="text/css" media="all and (min-width: 992px)" href="../css/resto-desktop.css"/>
+        <link rel="stylesheet" type="text/css" href="../public/css/retaurant.css"/>
+        <link rel="stylesheet" type="text/css" media="all and (min-width: 768px)" href="../public/css/retaurant.css"/>
+        <link rel="stylesheet" type="text/css" media="all and (min-width: 992px)" href="../public/css/retaurant.css"/>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/js/all.min.js" integrity="sha512-cyAbuGborsD25bhT/uz++wPqrh5cqPh1ULJz4NSpN9ktWcA6Hnh9g+CWKeNx2R0fgQt+ybRXdabSBgYXkQTTmA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     </head>
 
@@ -21,11 +21,11 @@
             <img class="logo" src="../public/images/ohmyfood.svg" alt="logo oh my food"/>
         </header>
 
-        <main class="restaurant">
-            <img class="resto__img" src="./public/images/lapalettedugout.jpg" alt="Vue d'un plat à déguster"/>
+        <main class="resto">
+            <img class="resto__img" src="../public/images/lapalettedugout.jpg" alt="Vue d'un plat à déguster"/>
             <section class="resto__id">
-                <h1 class="resto__h1">La palette du goût</h1>
-                <div class="resto__like">
+                <h1 class="resto__id__h1">La palette du goût</h1>
+                <div class="resto__id__like">
                     <span class="resto__like--empty far fa-heart"></span>
                     <span class="resto__like--full fas fa-heart"></span>
                 </div>
@@ -137,6 +137,9 @@
                     </ul>
                 </article>
             </section>
+            <div class="order">
+                <button class="order__btn">Commander</button>
+            </div>
         </main>
 
         <footer class="footer"> <!-- pied de page -->
@@ -144,18 +147,14 @@
             <ul class="footer__list">
                 <li>
                     <a href="#">
-                        <span class="footer__ico">
-                            <em class="fas fa-utensils"></em>
-                        </span>
-                        <span class="footer__txt">Proposer un restaurant</span>
+                        <span class="footer__ico fas fa-utensils"></span>
+                        <span class="footer__txt--tabul">Proposer un restaurant</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <span class="footer__ico">
-                            <em class="fas fa-hands-helping"></em>
-                        </span>
-                        <span class="footer__txt">Devenir partenaire</span>
+                        <span class="footer__ico fas fa-hands-helping"></span>
+                        <span class="footer__txt--tabul">Devenir partenaire</span>
                     </a>
                 </li>
                 <li>

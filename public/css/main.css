@@ -20,18 +20,19 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   position: relative;
   width: 100%;
   height: 60px;
+  padding-top: 10px;
   box-shadow: 0px 3px 6px #c7c7c7;
   overflow: hidden;
 }
 
 .logo {
-  width: 50%;
+  width: 200px;
   height: auto;
   margin: auto;
-  padding-top: 10px;
 }
 
 .location {
@@ -111,7 +112,7 @@ header {
   flex-direction: row;
   align-items: center;
   white-space: nowrap;
-  cursor: pointer;
+  cursor: default;
   box-sizing: border-box;
   height: 75px;
   width: 100%;
@@ -130,12 +131,6 @@ header {
   left: 12.5%;
   color: gray;
 }
-.main .running__assist li.inlight {
-  background: #f2eafb;
-}
-.main .running__assist li.inlight .running__assist__ico {
-  color: #9356DC;
-}
 .main .running__assist__txt {
   position: absolute;
   text-align: left;
@@ -151,6 +146,12 @@ header {
   color: white;
   background-color: #9356DC;
   left: -15px;
+}
+.main .running__assist li:hover {
+  background: #f2eafb;
+}
+.main .running__assist li:hover .running__assist__ico {
+  color: #9356DC;
 }
 .main .restos {
   background-color: #f2f2f2;
@@ -229,6 +230,7 @@ header {
 .footer {
   background-color: #404040;
   padding: 10px 20px 30px 30px;
+  margin-top: -15px;
 }
 .footer__h4 {
   font-family: "shrikhand", sans-serif;
