@@ -1,0 +1,13 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+
+body {
+    @include police-texte;
+    font-size: medium;
+    font-weight: 300;
+    font-style: normal;
+    background-color: $blanc;
+    color: $noir;
+    width: 100%;
+    margin: 0;
+}

@@ -1,0 +1,35 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+
+
+.footer {
+    background-color: $fond_carbone;
+    padding: 10px 20px 30px 30px;
+    margin-top: -15px;
+    &__h4 {
+        @include police-titres;
+        font-size: 22px;
+        color: $blanc;
+        margin-bottom: 0px;
+    }
+    &__list {
+        list-style-type: none;
+        padding: 0;
+        &__item a {
+            display: inline-block;
+            line-height: 25px;
+            color: $blanc;
+            position: relative;
+        }
+        &__item {
+            &__ico {
+                font-size: 13px;
+                top: 5px;
+                position: absolute;
+            }
+            &__tabul {
+                margin-left: 22px;
+            }
+        }
+    }
+}

@@ -1,6 +1,6 @@
 @import "./variables";
 
-@mixin ombre ($color: $shadow) {
+@mixin ombre ($color: $shadow_light) {
     box-shadow: 3px 3px 8px $color;
 }
 
@@ -14,4 +14,13 @@
 
 @mixin heart--gradient {
     background: linear-gradient(to top,$secondaire,$primaire);
+}
+
+@mixin police-texte {
+    font-family: 'Roboto', sans-serif;
+}
+
+@mixin police-titres {
+    font-family: 'shrikhand', sans-serif;
+    font-weight: 100;
 }

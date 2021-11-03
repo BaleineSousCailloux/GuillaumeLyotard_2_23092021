@@ -1,96 +1,70 @@
-@import "./utils/_variables";
-@import "./utils/_mixins";
-@import "./base/fonts";
+@import "./utils/variables";
+@import "./utils/mixins";
+@import "./base/body";
+@import "./base/link";
+@import "./layouts/header";
+@import "./layouts/logo";
 @import "./layouts/footer";
 @import "./pages/accueil";
 @import "./pages/restaurant";
 
-body {
-    font-family: 'Roboto', sans-serif;
-    font-size: medium;
-    font-weight: 400;
-    font-style: normal;
-    background-color: #ffffff;
-    color: black;
-    width: 100%;
-    margin: 0;
-}
-a {
-    display: inline-block;
-    text-decoration: none;
-    color: black;
-    cursor: pointer;
-}
+
 header {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    width: 100%;
-    height: 60px;
-    padding-top: 10px;
-    box-shadow: 0px 3px 6px $shadow;
-    overflow: hidden;
-}
-.logo {
-    width: 200px;
-    height: auto;
-    margin: auto;
-}
-.location {
-    display: inline-block;
-    width: 100%;
-    line-height: 50px;
-    text-align: center;
-    margin: auto;
-    background-color: $fond;
-    &__ico {
-        margin-right: 10px;
-    }
-    &__txt {
-        font-weight: 500;
-    }
-}
-.search {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    text-align: center;
-    background: linear-gradient(to top,$fond,white);
-    &__h1 {
-        font-size: x-large;
-        font-weight: 600;
-        margin: 40px 15% 0 15%;
-    }
-    &__p {
-        font-size: larger;
-        font-weight: 300;
-        margin: 20px 5% 0 5%;
-    }
-    &__btn {
-        margin: 30px 0 40px 0;
-        white-space: nowrap;
-        padding: 0 30px;
-        height: 50px;
-        border-radius: 25px;
-        border: none;
-        font-family: 'Roboto', sans-serif;
-        color: white;
-        font-size: medium;
-        font-weight: 500;
-        cursor: pointer;
-        @include ombre;
-        @include btn--gradient;
-        &:hover {
-            @include btn--gradient--light;
-        }
-    }
+    box-shadow: 0px 3px 6px $shadow_light;
 }
 .main {
     width: 100%;
+    .location {
+        display: inline-block;
+        width: 100%;
+        line-height: 50px;
+        text-align: center;
+        margin: auto;
+        background-color: $fond_gris;
+        &__ico {
+            margin-right: 10px;
+        }
+        &__txt {
+            font-weight: 500;
+        }
+    }
+    .search {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+        background: linear-gradient(to top,$fond_gris,$blanc);
+        &__h1 {
+            font-size: x-large;
+            font-weight: 600;
+            margin: 40px 15% 0 15%;
+        }
+        &__p {
+            font-size: larger;
+            font-weight: 300;
+            margin: 20px 5% 0 5%;
+        }
+        &__btn {
+            margin: 30px 0 40px 0;
+            white-space: nowrap;
+            padding: 0 30px;
+            height: 50px;
+            border-radius: 25px;
+            border: none;
+            @include police-texte;
+            color: $blanc;
+            font-size: medium;
+            font-weight: 500;
+            cursor: pointer;
+            @include ombre;
+            @include btn--gradient;
+            &:hover {
+                @include btn--gradient--light;
+            }
+        }
+    }
     .running {
         margin: 40px 30px 20px 20px;
         &__h3 {
@@ -114,7 +88,7 @@ header {
                 box-sizing: border-box;
                 height: 75px;
                 width: 100%;
-                background: linear-gradient(to top,white, $fond);
+                background: linear-gradient(to top, $blanc, $fond_gris);
                 @include ombre;
                 border-radius: 20px;
                 padding: 0;
@@ -122,21 +96,23 @@ header {
                 margin-left: 25px;
                 font-weight: 500;
                 position: relative;
-                
+                &:hover {
+                    background: lighten($primaire, 35%);
+                    .running__assist__ico {
+                        color: $primaire;
+                    }
+                }   
             }
             &__ico {
                 position: relative;
                 font-size: larger;
                 left: 12.5%;
-                color: lighten(black, 50%);
-
+                color: lighten($noir, 50%);
             }
             &__txt {
                 position: absolute;
                 text-align: left;
-                left: 25%;
-            
-                
+                left: 25%; 
             }
             &__number {
                 position: absolute;
@@ -145,20 +121,14 @@ header {
                 height: 30px;
                 width: 30px;
                 line-height: 30px;
-                color: white;
+                color: $blanc;
                 background-color: $primaire;
                 left: -15px;
-            }
-            li:hover {
-                background: lighten($primaire, 35%);
-                .running__assist__ico {
-                    color: $primaire;
-                }
             }
         }
     }
     .restos {
-        background-color: $fond;
+        background-color: $fond_gris;
         width: 100%;
         &__h2 {
             font-size: x-large;
@@ -169,95 +139,62 @@ header {
         &__liste {
             display: flex;
             flex-direction: column;
-            padding-bottom: 50px;
-            
+            padding-bottom: 50px; 
         }
-    }
-    .resto {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        height: 260px;
-        background-color: #fff;
-        @include ombre;
-        border-radius: 20px;
-        margin: 0 20px 20px 20px;
-        overflow: hidden;
-        &__img {
-            
-            position: relative;
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
+        .resto {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            box-sizing: border-box;
+            height: 260px;
+            background-color: $blanc;
+            @include ombre;
+            border-radius: 20px;
+            margin: 0 20px 20px 20px;
             overflow: hidden;
-        }
-        &__btn {
-            position: absolute;
-            left: 67%;
-            margin-top: 15px;
-            background-color: $tertiaire;
-            color: darken($tertiaire, 50%);
-            padding: 6px 12px;
-            border-radius: 4px;
-            box-shadow: 1px 1px 15px black;
-        }
-        &__legend {
-            margin: -4px 15px 15px 15px;
-        }
-        &__h3 {
-            font-size: large;
-        }
-        &__location {
-            margin-top: -15px;
-        }
-        &__like {
-            position: relative;
-            left: 85%;
-            top: -21%;
-            font-size: 28px;
-            font-weight: 100;
-            &--empty {
-                position: absolute;
-                background-clip: text;
-                @include heart--gradient;
+            &__img {
+                position: relative;
+                width: 100%;
+                height: 180px;
+                object-fit: cover;
             }
-            &--full {
+            &__btn {
                 position: absolute;
-                background-clip: text;
-                background: white;
-                opacity: 0.5;
+                right: 40px;
+                margin-top: 20px;
+                background-color: $tertiaire;
+                color: darken($tertiaire, 50%);
+                padding: 6px 12px;
+                border-radius: 4px;
+                box-shadow: 1px 1px 15px $noir;
+            }
+            &__legend {
+                margin: -4px 15px 15px 15px;
+                &__h3 {
+                    font-size: large;
+                }
+                &__location {
+                    margin-top: -15px;
+                }
+            }
+            &__like {
+                position: relative;
+                left: 86%;
+                top: -58px;
+                font-size: 28px;
+                font-weight: 100;
+                &--empty {
+                    position: absolute;
+                    background-clip: text;
+                    @include heart--gradient;
+                }
+                &--full {
+                    position: absolute;
+                    background-clip: text;
+                    background: $blanc;
+                    opacity: 0.5;
+                }
             }
         }
-    }
-}
-.footer {
-    background-color: lighten(black, 25%);
-    padding: 10px 20px 30px 30px;
-    margin-top: -15px;
-
-    &__h4 {
-        font-family: 'shrikhand', sans-serif;
-        font-size: 22px;
-        font-weight: 200;
-        color: white;
-        margin-bottom: 0px;
-    }
-    &__list {
-        list-style-type: none;
-        padding: 0;
-        li a {
-            display: inline-block;
-            line-height: 25px;
-            color: white;
-            position: relative;
-        }
-    }
-    &__txt--tabul {
-        margin-left: 22px;
-    }
-    &__ico {
-        font-size: 13px;
-        top: 5px;
-        position: absolute;
     }
 }

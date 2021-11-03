@@ -3,7 +3,7 @@ body {
   font-size: medium;
   font-weight: 300;
   font-style: normal;
-  background-color: #ffffff;
+  background-color: white;
   color: black;
   width: 100%;
   margin: 0;
@@ -28,16 +28,47 @@ header {
   overflow: hidden;
 }
 
-.home__btn {
-  position: absolute;
-  font-size: 24px;
-  left: 20px;
-}
-
 .logo {
   width: 200px;
   height: auto;
   margin: auto;
+}
+
+.footer {
+  background-color: #222222;
+  padding: 10px 20px 30px 30px;
+  margin-top: -15px;
+}
+.footer__h4 {
+  font-family: "shrikhand", sans-serif;
+  font-weight: 100;
+  font-size: 22px;
+  color: white;
+  margin-bottom: 0px;
+}
+.footer__list {
+  list-style-type: none;
+  padding: 0;
+}
+.footer__list__item a {
+  display: inline-block;
+  line-height: 25px;
+  color: white;
+  position: relative;
+}
+.footer__list__item__ico {
+  font-size: 13px;
+  top: 5px;
+  position: absolute;
+}
+.footer__list__item__tabul {
+  margin-left: 22px;
+}
+
+header .home__btn {
+  position: absolute;
+  font-size: 24px;
+  left: 20px;
 }
 
 .resto {
@@ -69,9 +100,8 @@ header {
 }
 .resto__id__like {
   font-size: 28px;
-  position: absolute;
-  top: 20%;
-  left: 85%;
+  top: 40px;
+  right: 45px;
 }
 .resto__id__like--empty, .resto__id__like--full {
   position: absolute;
@@ -83,7 +113,10 @@ header {
   background-color: #f2f2f2;
   margin-bottom: -100px;
 }
-.resto .menu__part .menu__h2 {
+.resto .menu__part {
+  margin-bottom: 30px;
+}
+.resto .menu__part__h2 {
   font-size: 19px;
   text-transform: uppercase;
   font-weight: 400;
@@ -92,11 +125,15 @@ header {
   border-bottom: 4px solid #99E2D0;
   width: 50px;
 }
-.resto .menu__part .menu__list {
+.resto .menu__part__list {
   list-style-type: none;
   padding: 0;
 }
-.resto .menu__part .menu__list .menu__item {
+.resto .menu__part__list .item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-sizing: border-box;
   height: 70px;
   background-color: white;
   border-radius: 15px;
@@ -104,26 +141,30 @@ header {
   margin-bottom: 20px;
   overflow: hidden;
 }
-.resto .menu__part .menu__list .menu__item .item {
+.resto .menu__part__list .item__legend {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  height: 70px;
-  padding: 10px;
-  margin-top: -13px;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  height: 100%;
+  padding: 0 10px;
+  margin: 0;
 }
-.resto .menu__part .menu__list .menu__item .item .menu__h3 {
+.resto .menu__part__list .item__legend__h3 {
   font-size: 17px;
   font-weight: 600;
+  margin-top: 15px;
 }
-.resto .menu__part .menu__list .menu__item .item .menu__txt {
-  margin-top: -15px;
+.resto .menu__part__list .item__legend__txt {
+  margin-top: -13px;
   font-size: 14px;
 }
-.resto .menu__part .menu__list .menu__item .item .menu__price {
-  margin-top: 37px;
-  margin-left: 100px;
+.resto .menu__part__list .item__price {
+  margin-top: 20px;
+  margin-right: 20px;
+}
+.resto .menu__part__list .item__btn {
+  display: none;
 }
 .resto .order {
   width: 100%;
@@ -149,35 +190,4 @@ header {
 }
 .resto .order .order__btn:hover {
   background: linear-gradient(to left top, #ae80e5, #fface8);
-}
-
-.footer {
-  background-color: #404040;
-  padding: 10px 20px 30px 30px;
-  margin-top: -15px;
-}
-.footer__h4 {
-  font-family: "shrikhand", sans-serif;
-  font-size: 22px;
-  font-weight: 200;
-  color: white;
-  margin-bottom: 0px;
-}
-.footer__list {
-  list-style-type: none;
-  padding: 0;
-}
-.footer__list li a {
-  display: inline-block;
-  line-height: 25px;
-  color: white;
-  position: relative;
-}
-.footer__txt--tabul {
-  margin-left: 22px;
-}
-.footer__ico {
-  font-size: 13px;
-  top: 5px;
-  position: absolute;
 }

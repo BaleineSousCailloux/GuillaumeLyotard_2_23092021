@@ -1,9 +1,9 @@
 body {
   font-family: "Roboto", sans-serif;
   font-size: medium;
-  font-weight: 400;
+  font-weight: 300;
   font-style: normal;
-  background-color: #ffffff;
+  background-color: white;
   color: black;
   width: 100%;
   margin: 0;
@@ -25,7 +25,6 @@ header {
   width: 100%;
   height: 60px;
   padding-top: 10px;
-  box-shadow: 0px 3px 6px #c7c7c7;
   overflow: hidden;
 }
 
@@ -35,7 +34,45 @@ header {
   margin: auto;
 }
 
-.location {
+.footer {
+  background-color: #222222;
+  padding: 10px 20px 30px 30px;
+  margin-top: -15px;
+}
+.footer__h4 {
+  font-family: "shrikhand", sans-serif;
+  font-weight: 100;
+  font-size: 22px;
+  color: white;
+  margin-bottom: 0px;
+}
+.footer__list {
+  list-style-type: none;
+  padding: 0;
+}
+.footer__list__item a {
+  display: inline-block;
+  line-height: 25px;
+  color: white;
+  position: relative;
+}
+.footer__list__item__ico {
+  font-size: 13px;
+  top: 5px;
+  position: absolute;
+}
+.footer__list__item__tabul {
+  margin-left: 22px;
+}
+
+header {
+  box-shadow: 0px 3px 6px #c7c7c7;
+}
+
+.main {
+  width: 100%;
+}
+.main .location {
   display: inline-block;
   width: 100%;
   line-height: 50px;
@@ -43,14 +80,13 @@ header {
   margin: auto;
   background-color: #f2f2f2;
 }
-.location__ico {
+.main .location__ico {
   margin-right: 10px;
 }
-.location__txt {
+.main .location__txt {
   font-weight: 500;
 }
-
-.search {
+.main .search {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -59,17 +95,17 @@ header {
   text-align: center;
   background: linear-gradient(to top, #f2f2f2, white);
 }
-.search__h1 {
+.main .search__h1 {
   font-size: x-large;
   font-weight: 600;
   margin: 40px 15% 0 15%;
 }
-.search__p {
+.main .search__p {
   font-size: larger;
   font-weight: 300;
   margin: 20px 5% 0 5%;
 }
-.search__btn {
+.main .search__btn {
   margin: 30px 0 40px 0;
   white-space: nowrap;
   padding: 0 30px;
@@ -84,12 +120,8 @@ header {
   box-shadow: 3px 3px 8px #c7c7c7;
   background: linear-gradient(to left top, #9356DC, #FF79DA);
 }
-.search__btn:hover {
+.main .search__btn:hover {
   background: linear-gradient(to left top, #ae80e5, #fface8);
-}
-
-.main {
-  width: 100%;
 }
 .main .running {
   margin: 40px 30px 20px 20px;
@@ -125,6 +157,12 @@ header {
   font-weight: 500;
   position: relative;
 }
+.main .running__assist li:hover {
+  background: #f2eafb;
+}
+.main .running__assist li:hover .running__assist__ico {
+  color: #9356DC;
+}
 .main .running__assist__ico {
   position: relative;
   font-size: larger;
@@ -147,12 +185,6 @@ header {
   background-color: #9356DC;
   left: -15px;
 }
-.main .running__assist li:hover {
-  background: #f2eafb;
-}
-.main .running__assist li:hover .running__assist__ico {
-  color: #9356DC;
-}
 .main .restos {
   background-color: #f2f2f2;
   width: 100%;
@@ -168,92 +200,61 @@ header {
   flex-direction: column;
   padding-bottom: 50px;
 }
-.main .resto {
+.main .restos .resto {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  box-sizing: border-box;
   height: 260px;
-  background-color: #fff;
+  background-color: white;
   box-shadow: 3px 3px 8px #c7c7c7;
   border-radius: 20px;
   margin: 0 20px 20px 20px;
   overflow: hidden;
 }
-.main .resto__img {
+.main .restos .resto__img {
   position: relative;
   width: 100%;
   height: 180px;
   -o-object-fit: cover;
      object-fit: cover;
-  overflow: hidden;
 }
-.main .resto__btn {
+.main .restos .resto__btn {
   position: absolute;
-  left: 67%;
-  margin-top: 15px;
+  right: 40px;
+  margin-top: 20px;
   background-color: #99E2D0;
   color: #1b6150;
   padding: 6px 12px;
   border-radius: 4px;
   box-shadow: 1px 1px 15px black;
 }
-.main .resto__legend {
+.main .restos .resto__legend {
   margin: -4px 15px 15px 15px;
 }
-.main .resto__h3 {
+.main .restos .resto__legend__h3 {
   font-size: large;
 }
-.main .resto__location {
+.main .restos .resto__legend__location {
   margin-top: -15px;
 }
-.main .resto__like {
+.main .restos .resto__like {
   position: relative;
-  left: 85%;
-  top: -21%;
+  left: 86%;
+  top: -58px;
   font-size: 28px;
   font-weight: 100;
 }
-.main .resto__like--empty {
+.main .restos .resto__like--empty {
   position: absolute;
   -webkit-background-clip: text;
           background-clip: text;
   background: linear-gradient(to top, #FF79DA, #9356DC);
 }
-.main .resto__like--full {
+.main .restos .resto__like--full {
   position: absolute;
   -webkit-background-clip: text;
           background-clip: text;
   background: white;
   opacity: 0.5;
-}
-
-.footer {
-  background-color: #404040;
-  padding: 10px 20px 30px 30px;
-  margin-top: -15px;
-}
-.footer__h4 {
-  font-family: "shrikhand", sans-serif;
-  font-size: 22px;
-  font-weight: 200;
-  color: white;
-  margin-bottom: 0px;
-}
-.footer__list {
-  list-style-type: none;
-  padding: 0;
-}
-.footer__list li a {
-  display: inline-block;
-  line-height: 25px;
-  color: white;
-  position: relative;
-}
-.footer__txt--tabul {
-  margin-left: 22px;
-}
-.footer__ico {
-  font-size: 13px;
-  top: 5px;
-  position: absolute;
 }
