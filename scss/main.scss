@@ -1,12 +1,9 @@
-@import "./utils/variables";
+@use "./base/body";
+@use "./base/link";
+@use "./layouts/header";
+@use "./layouts/logo";
+@use "./layouts/footer";
 @import "./utils/mixins";
-@import "./base/body";
-@import "./base/link";
-@import "./layouts/header";
-@import "./layouts/logo";
-@import "./layouts/footer";
-@import "./pages/accueil";
-@import "./pages/restaurant";
 
 
 header {
@@ -20,7 +17,7 @@ header {
         line-height: 50px;
         text-align: center;
         margin: auto;
-        background-color: $fond_gris;
+        background-color: $fond_2;
         &__ico {
             margin-right: 10px;
         }
@@ -35,7 +32,7 @@ header {
         justify-content: space-around;
         align-items: center;
         text-align: center;
-        background: linear-gradient(to top,$fond_gris,$blanc);
+        background: linear-gradient(to top,$fond_2,$fond_1);
         &__h1 {
             font-size: x-large;
             font-weight: 600;
@@ -54,7 +51,7 @@ header {
             border-radius: 25px;
             border: none;
             @include police-texte;
-            color: $blanc;
+            color: $txt_2;
             font-size: medium;
             font-weight: 500;
             cursor: pointer;
@@ -88,7 +85,7 @@ header {
                 box-sizing: border-box;
                 height: 75px;
                 width: 100%;
-                background: linear-gradient(to top, $blanc, $fond_gris);
+                background: linear-gradient(to top, $fond_1, $fond_2);
                 @include ombre;
                 border-radius: 20px;
                 padding: 0;
@@ -107,7 +104,7 @@ header {
                 position: relative;
                 font-size: larger;
                 left: 12.5%;
-                color: lighten($noir, 50%);
+                color: lighten($txt_1, 50%);
             }
             &__txt {
                 position: absolute;
@@ -121,14 +118,14 @@ header {
                 height: 30px;
                 width: 30px;
                 line-height: 30px;
-                color: $blanc;
+                color: $txt_2;
                 background-color: $primaire;
                 left: -15px;
             }
         }
     }
     .restos {
-        background-color: $fond_gris;
+        background-color: $fond_2;
         width: 100%;
         &__h2 {
             font-size: x-large;
@@ -147,7 +144,7 @@ header {
             justify-content: flex-start;
             box-sizing: border-box;
             height: 260px;
-            background-color: $blanc;
+            background-color: $fond_1;
             @include ombre;
             border-radius: 20px;
             margin: 0 20px 20px 20px;
@@ -164,37 +161,45 @@ header {
                 margin-top: 20px;
                 background-color: $tertiaire;
                 color: darken($tertiaire, 50%);
+                font-weight: 400;
                 padding: 6px 12px;
                 border-radius: 4px;
-                box-shadow: 1px 1px 15px $noir;
+                box-shadow: 1px 1px 15px $shadow_strong;
             }
             &__legend {
-                margin: -4px 15px 15px 15px;
-                &__h3 {
-                    font-size: large;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                margin: 15px;
+                &__txt {
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    &__h3 {
+                        font-size: large;
+                        margin: 0;
+                    }
+                    &__location {
+                        margin: 0px;
+                    }
                 }
-                &__location {
-                    margin-top: -15px;
+                &__like {
+                    position: relative;
+                    margin-right: 5px;
+                    font-size: 28px;
+                    font-weight: 100;
+                    &--empty {
+                        position: relative;
+                    }
+                    &--full {
+                        display: none;
+                        position: absolute;
+                        background-clip: text;
+                        color: transparent;
+                        -webkit-background-clip: text;
+                        @include heart--gradient;
+                    }
                 }
-            }
-            &__like {
-                position: relative;
-                left: 86%;
-                top: -58px;
-                font-size: 28px;
-                font-weight: 100;
-                &--empty {
-                    position: absolute;
-                    background-clip: text;
-                    @include heart--gradient;
-                }
-                &--full {
-                    position: absolute;
-                    background-clip: text;
-                    background: $blanc;
-                    opacity: 0.5;
-                }
-            }
+            } 
         }
     }
 }

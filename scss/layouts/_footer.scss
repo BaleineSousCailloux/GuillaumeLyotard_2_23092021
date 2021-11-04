@@ -1,15 +1,14 @@
-@import "../utils/variables";
-@import "../utils/mixins";
-
+@use "../utils/variables";
+@use "../utils/mixins";
 
 .footer {
-    background-color: $fond_carbone;
+    background-color: variables.$fond_3;
     padding: 10px 20px 30px 30px;
     margin-top: -15px;
     &__h4 {
-        @include police-titres;
+        @include mixins.police-titres;
         font-size: 22px;
-        color: $blanc;
+        color: variables.$txt_2;
         margin-bottom: 0px;
     }
     &__list {
@@ -18,7 +17,7 @@
         &__item a {
             display: inline-block;
             line-height: 25px;
-            color: $blanc;
+            color: variables.$txt_2;
             position: relative;
         }
         &__item {

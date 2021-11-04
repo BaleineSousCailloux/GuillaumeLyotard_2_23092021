@@ -1,12 +1,9 @@
-@import "./utils/variables";
+@use "./base/body";
+@use "./base/link";
+@use "./layouts/header";
+@use "./layouts/logo";
+@use "./layouts/footer";
 @import "./utils/mixins";
-@import "./base/body";
-@import "./base/link";
-@import "./layouts/header";
-@import "./layouts/logo";
-@import "./layouts/footer";
-@import "./pages/accueil";
-@import "./pages/restaurant";
 
 
 header {
@@ -32,7 +29,7 @@ header {
         justify-content: space-between;
         align-items: center;
         padding: 10px 20px 30px 20px;
-        background-color: $fond_gris;
+        background-color: $fond_2;
         border-radius: 30px 30px 0 0;
         top: -60px;
         &__h1 {
@@ -42,10 +39,8 @@ header {
         }
         &__like {
             font-size: 28px;
-            top: 40px;
-            right: 45px;
-            &--empty, &--full {
-                position: absolute;
+            &--full {
+                display: none;
             }
         }
     }
@@ -53,7 +48,7 @@ header {
         position: relative;
         top: -100px;
         padding: 0px 20px 20px 20px;
-        background-color: $fond_gris;
+        background-color: $fond_2;
         margin-bottom: -100px;
         &__part {
             margin-bottom: 30px;
@@ -74,8 +69,7 @@ header {
                     flex-direction: row;
                     justify-content: space-between;
                     box-sizing: border-box;
-                    height: 70px;
-                    background-color: white;
+                    background-color: $fond_1;
                     border-radius: 15px;
                     @include ombre;
                     margin-bottom: 20px;
@@ -85,22 +79,20 @@ header {
                         flex-direction: column;
                         justify-content: space-between;
                         flex-wrap: nowrap;
-                        height: 100%;
-                        padding: 0 10px;
-                        margin: 0;
+                        margin: 15px;
                         &__h3 {
                             font-size: 17px;
                             font-weight: 600;
-                            margin-top: 15px;
+                            margin: 0;
                         }
                         &__txt {
-                            margin-top: -13px;
+                            margin: 5px 0 0 0;
                             font-size: 14px;
                         }
                     }
                     &__price {
-                        margin-top: 20px;
-                        margin-right: 20px;
+                        align-self: flex-end;
+                        margin-right: 15px;
                     }
                     &__btn {
                         display: none;
@@ -113,7 +105,7 @@ header {
         width: 100%;
         display: inline-block;
         text-align: center;
-        background-color: $fond_gris;
+        background-color: $fond_2;
         margin-top: 0;
         .order__btn {
             margin: 0px 0 50px 0;
@@ -123,7 +115,7 @@ header {
             border-radius: 25px;
             border: none;
             font-family: 'Roboto', sans-serif;
-            color: white;
+            color: $txt_2;
             font-size: medium;
             font-weight: 500;
             cursor: pointer;

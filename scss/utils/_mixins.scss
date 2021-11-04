@@ -1,4 +1,4 @@
-@import "./variables";
+@import './variables';
 
 @mixin ombre ($color: $shadow_light) {
     box-shadow: 3px 3px 8px $color;
