@@ -1,12 +1,11 @@
 @import "../utils/mixins";
 
 body {
-    @include police-texte;
+    @include police--texte;
     font-size: medium;
     font-weight: 300;
     font-style: normal;
     background-color: $fond_1;
-    color: $txt_1;
     width: 100%;
     margin: 0;
 }

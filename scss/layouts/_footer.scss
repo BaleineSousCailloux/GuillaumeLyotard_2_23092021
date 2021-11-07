@@ -6,7 +6,7 @@
     padding: 10px 20px 30px 30px;
     margin-top: -15px;
     &__h4 {
-        @include mixins.police-titres;
+        @include mixins.police--titres;
         font-size: 22px;
         color: variables.$txt_2;
         margin-bottom: 0px;

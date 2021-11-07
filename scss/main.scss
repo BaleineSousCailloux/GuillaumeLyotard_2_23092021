@@ -7,7 +7,7 @@
 
 
 header {
-    box-shadow: 0px 3px 6px $shadow_light;
+    box-shadow: 0px 3px 6px $shadow_2;
 }
 .main {
     width: 100%;
@@ -45,20 +45,10 @@ header {
         }
         &__btn {
             margin: 30px 0 40px 0;
-            white-space: nowrap;
-            padding: 0 30px;
-            height: 50px;
-            border-radius: 25px;
-            border: none;
-            @include police-texte;
-            color: $txt_2;
-            font-size: medium;
-            font-weight: 500;
-            cursor: pointer;
-            @include ombre;
-            @include btn--gradient;
-            &:hover {
-                @include btn--gradient--light;
+            @include btn--nav;
+            &::after {
+                content: "Explorer nos restaurants";
+                @include btn--nav--active;
             }
         }
     }
@@ -86,25 +76,51 @@ header {
                 height: 75px;
                 width: 100%;
                 background: linear-gradient(to top, $fond_1, $fond_2);
-                @include ombre;
+                @include box--shadow;
                 border-radius: 20px;
                 padding: 0;
                 margin-bottom: 25px;
                 margin-left: 25px;
                 font-weight: 500;
                 position: relative;
+                z-index: 1;
                 &:hover {
-                    background: lighten($primaire, 35%);
-                    .running__assist__ico {
-                        color: $primaire;
+                    &::after {
+                        opacity: 1;
                     }
-                }   
+                    /*&.running__assist__ico--active {
+                        opacity: 1;
+                    }*/
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    border-radius: 20px;
+                    z-index: -1;
+                    opacity: 0;
+                    background: lighten($primaire, 35%);
+                    @include box--shadow($shadow_3);
+                    transition: all 400ms;
+                }       
             }
             &__ico {
                 position: relative;
                 font-size: larger;
                 left: 12.5%;
                 color: lighten($txt_1, 50%);
+                z-index: +1;
+            }
+            &__ico--active {
+                    position: absolute;
+                    font-size: larger;
+                    left: 12.5%;
+                    color: $primaire;
+                    opacity: 1;
+                    z-index: -1;
             }
             &__txt {
                 position: absolute;
@@ -145,7 +161,7 @@ header {
             box-sizing: border-box;
             height: 260px;
             background-color: $fond_1;
-            @include ombre;
+            @include box--shadow;
             border-radius: 20px;
             margin: 0 20px 20px 20px;
             overflow: hidden;
@@ -164,7 +180,7 @@ header {
                 font-weight: 400;
                 padding: 6px 12px;
                 border-radius: 4px;
-                box-shadow: 1px 1px 15px $shadow_strong;
+                box-shadow: 1px 1px 15px $shadow_4;
             }
             &__legend {
                 display: flex;
@@ -183,22 +199,43 @@ header {
                     }
                 }
                 &__like {
-                    position: relative;
-                    margin-right: 5px;
+                    display: block;
+                    cursor: default;
+                    margin-right: 5px; 
                     font-size: 28px;
-                    font-weight: 100;
-                    &--empty {
-                        position: relative;
-                    }
+                    position: relative;       
                     &--full {
-                        display: none;
-                        position: absolute;
-                        background-clip: text;
-                        color: transparent;
-                        -webkit-background-clip: text;
+                        color: $primaire;
                         @include heart--gradient;
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        z-index: 0;
                     }
-                }
+                    &--mask {
+                        position: absolute;
+                        color: $fond_1;
+                        background-color: transparent;
+                        top: -1px;
+                        left: -1px;
+                        z-index: 1;
+                        transform-origin: top;
+                        transform: scale(1.1);
+                        transition: 600ms ease-in-out 100ms;
+                    }
+                    &:hover .resto__legend__like--mask, &:active .resto__legend__like--mask {
+                        transform: scale(0%);
+                    }
+                    &--empty {
+                        position: absolute;
+                        top: 1px;
+                        left: -2px;
+                        padding: auto;
+                        font-size: 31px;
+                        background-color: transparent;
+                        z-index: 2;
+                    }
+                } 
             } 
         }
     }

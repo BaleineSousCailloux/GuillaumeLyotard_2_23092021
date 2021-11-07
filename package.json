@@ -1,0 +1,21 @@
+{
+  "name": "ohmyfood",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./scss/main.scss:./public/css/main.css",
+    "prefix": "postcss ./public/css/main.css --use autoprefixer -d ./public/css/prefixed/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BaleineSousCailloux/GuillaumeLyotard_3_23092021.git"
+  },
+  "author": "BaleineSousCailloux",
+  "license": "ISC",
+  "browserslist": "last 4 versions",
+  "bugs": {
+    "url": "https://github.com/BaleineSousCailloux/GuillaumeLyotard_3_23092021/issues"
+  },
+  "homepage": "https://github.com/BaleineSousCailloux/GuillaumeLyotard_3_23092021#readme"
+}

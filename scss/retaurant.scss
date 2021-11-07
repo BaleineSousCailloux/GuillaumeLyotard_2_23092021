@@ -38,11 +38,42 @@ header {
             font-size: 28px;
         }
         &__like {
+            display: block;
+            cursor: default;
             font-size: 28px;
+            position: relative;       
             &--full {
-                display: none;
+                color: $primaire;
+                @include heart--gradient;
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                z-index: 0;
             }
-        }
+            &--mask {
+                position: absolute;
+                color: $fond_1;
+                background-color: transparent;
+                top: -1px;
+                left: -1px;
+                z-index: 1;
+                transform-origin: top;
+                transform: scale(1.1);
+                transition: 600ms ease-in-out 100ms;
+            }
+            &:hover .resto__id__like--mask, &:active .resto__id__like--mask {
+                transform: scale(0%);
+            }
+            &--empty {
+                position: absolute;
+                top: 1px;
+                left: -2px;
+                padding: auto;
+                font-size: 31px;
+                background-color: transparent;
+                z-index: 2;
+            }
+        } 
     }
     .menu {
         position: relative;
@@ -71,7 +102,7 @@ header {
                     box-sizing: border-box;
                     background-color: $fond_1;
                     border-radius: 15px;
-                    @include ombre;
+                    @include box--shadow;
                     margin-bottom: 20px;
                     overflow: hidden;
                     &__legend {
@@ -109,20 +140,10 @@ header {
         margin-top: 0;
         .order__btn {
             margin: 0px 0 50px 0;
-            white-space: nowrap;
-            padding: 0 50px;
-            height: 50px;
-            border-radius: 25px;
-            border: none;
-            font-family: 'Roboto', sans-serif;
-            color: $txt_2;
-            font-size: medium;
-            font-weight: 500;
-            cursor: pointer;
-            @include ombre;
-            @include btn--gradient;
-            &:hover {
-                @include btn--gradient--light;
+            @include btn--nav;
+            &::after {
+                content: "Commander";
+                @include btn--nav--active;
             }
         }
     }
