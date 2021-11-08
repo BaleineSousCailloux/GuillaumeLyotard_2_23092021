@@ -84,13 +84,13 @@ header {
                 font-weight: 500;
                 position: relative;
                 z-index: 1;
-                &:hover {
+                &:hover, &:focus, &:active {
                     &::after {
                         opacity: 1;
                     }
-                    /*&.running__assist__ico--active {
+                    .running__assist__ico--active {
                         opacity: 1;
-                    }*/
+                    }
                 }
                 &::after {
                     content: "";
@@ -112,15 +112,15 @@ header {
                 font-size: larger;
                 left: 12.5%;
                 color: lighten($txt_1, 50%);
-                z-index: +1;
+                z-index: 0;
             }
             &__ico--active {
                     position: absolute;
                     font-size: larger;
                     left: 12.5%;
                     color: $primaire;
-                    opacity: 1;
-                    z-index: -1;
+                    opacity: 0;
+                    z-index: 1;
             }
             &__txt {
                 position: absolute;
@@ -223,7 +223,7 @@ header {
                         transform: scale(1.1);
                         transition: 600ms ease-in-out 100ms;
                     }
-                    &:hover .resto__legend__like--mask, &:active .resto__legend__like--mask {
+                    &:hover .resto__legend__like--mask, &:focus .resto__legend__like--mask, &:active .resto__legend__like--mask {
                         transform: scale(0%);
                     }
                     &--empty {

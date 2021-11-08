@@ -39,7 +39,7 @@
     @include btn--gradient;
     position: relative;
     z-index: 1;
-    &:hover, &:active {
+    &:hover, &:focus, &:active {
         &::after {
             opacity: 1;
         }

@@ -120,7 +120,7 @@ header {
   position: relative;
   z-index: 1;
 }
-.main .search__btn:hover::after, .main .search__btn:active::after {
+.main .search__btn:hover::after, .main .search__btn:focus::after, .main .search__btn:active::after {
   opacity: 1;
 }
 .main .search__btn::after {
@@ -176,12 +176,10 @@ header {
   position: relative;
   z-index: 1;
 }
-.main .running__assist li:hover {
-  /*&.running__assist__ico--active {
-      opacity: 1;
-  }*/
+.main .running__assist li:hover::after, .main .running__assist li:focus::after, .main .running__assist li:active::after {
+  opacity: 1;
 }
-.main .running__assist li:hover::after {
+.main .running__assist li:hover .running__assist__ico--active, .main .running__assist li:focus .running__assist__ico--active, .main .running__assist li:active .running__assist__ico--active {
   opacity: 1;
 }
 .main .running__assist li::after {
@@ -203,15 +201,15 @@ header {
   font-size: larger;
   left: 12.5%;
   color: gray;
-  z-index: 1;
+  z-index: 0;
 }
 .main .running__assist__ico--active {
   position: absolute;
   font-size: larger;
   left: 12.5%;
   color: #9356DC;
-  opacity: 1;
-  z-index: -1;
+  opacity: 0;
+  z-index: 1;
 }
 .main .running__assist__txt {
   position: absolute;
@@ -317,7 +315,7 @@ header {
   transform: scale(1.1);
   transition: 600ms ease-in-out 100ms;
 }
-.main .restos .resto__legend__like:hover .resto__legend__like--mask, .main .restos .resto__legend__like:active .resto__legend__like--mask {
+.main .restos .resto__legend__like:hover .resto__legend__like--mask, .main .restos .resto__legend__like:focus .resto__legend__like--mask, .main .restos .resto__legend__like:active .resto__legend__like--mask {
   transform: scale(0%);
 }
 .main .restos .resto__legend__like--empty {

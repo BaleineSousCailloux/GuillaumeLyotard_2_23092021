@@ -214,7 +214,7 @@ header .home__btn {
   position: relative;
   z-index: 1;
 }
-.resto .order .order__btn:hover::after, .resto .order .order__btn:active::after {
+.resto .order .order__btn:hover::after, .resto .order .order__btn:focus::after, .resto .order .order__btn:active::after {
   opacity: 1;
 }
 .resto .order .order__btn::after {
