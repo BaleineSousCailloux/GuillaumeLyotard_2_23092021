@@ -111,6 +111,10 @@ header {
   border-radius: 25px;
   border: none;
   font-family: "Roboto", sans-serif;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   color: #fff;
   font-size: medium;
   font-weight: 500;
@@ -163,6 +167,10 @@ header {
   align-items: center;
   white-space: nowrap;
   cursor: default;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   box-sizing: border-box;
   height: 75px;
   width: 100%;
@@ -276,6 +284,7 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  height: 85px;
   margin: 15px;
 }
 .main .restos .resto__legend__txt {
@@ -292,6 +301,10 @@ header {
 .main .restos .resto__legend__like {
   display: block;
   cursor: default;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   margin-right: 5px;
   font-size: 28px;
   position: relative;

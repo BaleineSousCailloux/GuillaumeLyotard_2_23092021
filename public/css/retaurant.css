@@ -122,7 +122,7 @@ header .home__btn {
   transform: scale(1.1);
   transition: 600ms ease-in-out 100ms;
 }
-.resto__id__like:hover .resto__id__like--mask, .resto__id__like:active .resto__id__like--mask {
+.resto__id__like:hover .resto__id__like--mask, .resto__id__like:focus .resto__id__like--mask .resto__id__like:active .resto__id__like--mask {
   transform: scale(0%);
 }
 .resto__id__like--empty {
@@ -205,6 +205,10 @@ header .home__btn {
   border-radius: 25px;
   border: none;
   font-family: "Roboto", sans-serif;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   color: #fff;
   font-size: medium;
   font-weight: 500;

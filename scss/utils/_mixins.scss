@@ -31,6 +31,7 @@
     border-radius: 25px;
     border: none;
     @include police--texte;
+    user-select: none;
     color: $txt_2;
     font-size: medium;
     font-weight: 500;

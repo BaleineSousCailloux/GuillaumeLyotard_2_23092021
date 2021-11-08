@@ -72,6 +72,7 @@ header {
                 align-items: center;
                 white-space: nowrap;
                 cursor: default;
+                user-select: none;
                 box-sizing: border-box;
                 height: 75px;
                 width: 100%;
@@ -186,6 +187,7 @@ header {
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
+                height: 85px;
                 margin: 15px;
                 &__txt {
                     flex-direction: column;
@@ -201,9 +203,10 @@ header {
                 &__like {
                     display: block;
                     cursor: default;
+                    user-select: none;
                     margin-right: 5px; 
                     font-size: 28px;
-                    position: relative;       
+                    position: relative;
                     &--full {
                         color: $primaire;
                         @include heart--gradient;
