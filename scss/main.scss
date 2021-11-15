@@ -5,10 +5,161 @@
 @use "./layouts/footer";
 @import "./utils/mixins";
 
-
-header {
-    box-shadow: 0px 3px 6px $shadow_2;
+@keyframes light {
+    25% {
+        transform: translate(3px, 0px);
+    }
+    50% {
+        transform: translate(0px, 3px);
+    }
+    75% {
+        transform: translate(-3px, 0px);
+    }
 }
+@keyframes shadow {
+    25% {
+        transform: translate(-3px, 0px);
+    }
+    50% {
+        transform: translate(0px, -3px);
+    }
+    75% {
+        transform: translate(3px, 0px);
+    }
+}
+@keyframes backlight {
+    0% {
+        background: linear-gradient(-25deg, $fond_3, $tertiaire  50%);
+    }
+    10% {
+        background: linear-gradient(11deg, $fond_3, $tertiaire  50%);
+    }
+    20% {
+        background: linear-gradient(47deg, $fond_3, $tertiaire  50%);
+    }
+    30% {
+        background: linear-gradient(83deg, $fond_3, $tertiaire  50%);
+    }
+    40% {
+        background: linear-gradient(119deg, $fond_3,  $tertiaire  50%);
+    }
+    50% {
+        background: linear-gradient(155deg, $fond_3,  $tertiaire  50%);
+    }
+    60% {
+        background: linear-gradient(191deg, $fond_3,  $tertiaire 50%);
+    }
+    70% {
+        background: linear-gradient(227deg, $fond_3, $tertiaire  50%);
+    }
+    80% {
+        background: linear-gradient(263deg, $fond_3,  $tertiaire  50%);
+    }
+    90% {
+        background: linear-gradient(299deg, $fond_3,  $tertiaire  50%);
+    }
+    100% {
+        background: linear-gradient(335deg, $fond_3,  $tertiaire  50%);
+    }
+}
+@keyframes blur {
+    0% {
+        filter: blur(7px);
+    }
+    90% {
+        filter: blur(7px);
+    }
+    100% {
+        filter: none;
+    }
+}
+@keyframes loader_display {
+    0% {
+        opacity: 100%;
+    }
+    80% {
+        opacity: 95%;
+    }
+    100% {
+        opacity: 0%;
+        display: none;
+        z-index: 0;
+    }
+}
+@keyframes scroll {
+    0% {
+        overflow-y: hidden;
+    }
+    100% { 
+        overflow-y: hidden;
+    }
+}
+
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    opacity: 100%;
+    animation: loader_display 3s linear forwards;
+    .backlight {
+        animation: backlight 1500ms linear infinite;
+    }
+    .identity--background--light {
+        animation: light 1500ms linear infinite;
+    }
+    .identity--background--shadow {
+        animation: shadow 1500ms linear infinite;
+    }
+    .backlight {
+        content: "";
+        position: absolute;
+        background: linear-gradient(83deg, $fond_3, $fond_1 50%);
+        opacity: 85%;
+        width: 100%;
+        height: 100%;
+    }
+    .identity--background--light {
+        position: absolute;
+        @include police--titres;
+        text-shadow: -2px -2px 3px lighten($tertiaire, 10%);
+        font-size: 40px;
+        color: lighten($tertiaire, 10%);
+        margin: auto;
+    }
+    .identity--background--shadow {
+        position: absolute;
+        @include police--titres;
+        text-shadow: 2px 2px 3px black;
+        font-size: 40px;
+        color: black;
+        margin: auto;
+    }
+    .identity--color {
+        position: absolute;
+        @include police--titres;
+        font-size: 40px;
+        color: $primaire;
+        background: linear-gradient(to left top, darken($primaire, 5%), darken($secondaire, 5%));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin: auto;
+        padding: 20px;
+    }
+}
+.blur {
+    filter: none;
+    animation: blur 3s linear;
+}
+html {
+    overflow-y: visible;
+    animation: scroll 2.5s;
+}
+
 .main {
     width: 100%;
     .location {
@@ -165,16 +316,17 @@ header {
             @include box--shadow;
             border-radius: 20px;
             margin: 0 20px 20px 20px;
+            position: relative;
             overflow: hidden;
             &__img {
-                position: relative;
+                
                 width: 100%;
                 height: 180px;
                 object-fit: cover;
             }
             &__btn {
                 position: absolute;
-                right: 40px;
+                right: 20px;
                 margin-top: 20px;
                 background-color: $tertiaire;
                 color: darken($tertiaire, 50%);
@@ -185,59 +337,51 @@ header {
             }
             &__legend {
                 display: flex;
-                flex-direction: row;
-                justify-content: space-between;
+                flex-direction: column;
+                justify-content: flex-start;
                 height: 85px;
                 margin: 15px;
-                &__txt {
-                    flex-direction: column;
-                    justify-content: flex-start;
-                    &__h3 {
-                        font-size: large;
-                        margin: 0;
-                    }
-                    &__location {
-                        margin: 0px;
-                    }
+                &__h3 {
+                    font-size: large;
+                    margin: 0;
                 }
-                &__like {
-                    display: block;
-                    cursor: default;
-                    user-select: none;
-                    margin-right: 5px; 
-                    font-size: 28px;
+                &__location {
+                    margin: 0px;
+                }
+            }
+            &__like {
+                margin-right: 5px; 
+                font-size: 28px;
+                position: absolute;
+                bottom: 25px;
+                right: 25px;
+                &--full {
                     position: relative;
-                    &--full {
-                        color: $primaire;
-                        @include heart--gradient;
-                        background-clip: text;
-                        -webkit-background-clip: text;
-                        -webkit-text-fill-color: transparent;
-                        z-index: 0;
-                    }
-                    &--mask {
-                        position: absolute;
-                        color: $fond_1;
-                        background-color: transparent;
-                        top: -1px;
-                        left: -1px;
-                        z-index: 1;
-                        transform-origin: top;
-                        transform: scale(1.1);
-                        transition: 600ms ease-in-out 100ms;
-                    }
-                    &:hover .resto__legend__like--mask, &:focus .resto__legend__like--mask, &:active .resto__legend__like--mask {
-                        transform: scale(0%);
-                    }
-                    &--empty {
-                        position: absolute;
-                        top: 1px;
-                        left: -2px;
-                        padding: auto;
-                        font-size: 31px;
-                        background-color: transparent;
-                        z-index: 2;
-                    }
+                    color: $primaire;
+                    @include heart--gradient;
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+                &--mask {
+                    position: absolute;
+                    color: $fond_1;
+                    background-color: $fond_1;
+                    top: -1px;
+                    left: -1px;
+                    transform-origin: top;
+                    transform: scale(1.1);
+                    transition: 600ms ease-in-out 100ms;
+                }
+                &:hover .resto__like--mask, &:focus .resto__like--mask, &:active .resto__like--mask {
+                    transform: scaley(0);
+                }
+                &--empty {
+                    position: absolute;
+                    top: 1px;
+                    left: -2px;
+                    font-size: 31px;
+                    background-color: transparent;
                 } 
             } 
         }

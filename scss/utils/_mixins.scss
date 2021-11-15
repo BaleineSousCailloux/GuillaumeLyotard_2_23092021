@@ -28,6 +28,9 @@
 @mixin btn--nav {
     width: 240px;
     height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 25px;
     border: none;
     @include police--texte;

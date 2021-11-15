@@ -24,7 +24,7 @@ header {
   width: 100%;
   height: 60px;
   padding-top: 10px;
-  overflow: hidden;
+  box-shadow: 0px 3px 6px #c3c3c3;
 }
 
 .logo {
@@ -64,8 +64,163 @@ header {
   margin-left: 22px;
 }
 
-header {
-  box-shadow: 0px 3px 6px #c6c6c6;
+@keyframes light {
+  25% {
+    transform: translate(3px, 0px);
+  }
+  50% {
+    transform: translate(0px, 3px);
+  }
+  75% {
+    transform: translate(-3px, 0px);
+  }
+}
+@keyframes shadow {
+  25% {
+    transform: translate(-3px, 0px);
+  }
+  50% {
+    transform: translate(0px, -3px);
+  }
+  75% {
+    transform: translate(3px, 0px);
+  }
+}
+@keyframes backlight {
+  0% {
+    background: linear-gradient(-25deg, #222222, #99E2D0 50%);
+  }
+  10% {
+    background: linear-gradient(11deg, #222222, #99E2D0 50%);
+  }
+  20% {
+    background: linear-gradient(47deg, #222222, #99E2D0 50%);
+  }
+  30% {
+    background: linear-gradient(83deg, #222222, #99E2D0 50%);
+  }
+  40% {
+    background: linear-gradient(119deg, #222222, #99E2D0 50%);
+  }
+  50% {
+    background: linear-gradient(155deg, #222222, #99E2D0 50%);
+  }
+  60% {
+    background: linear-gradient(191deg, #222222, #99E2D0 50%);
+  }
+  70% {
+    background: linear-gradient(227deg, #222222, #99E2D0 50%);
+  }
+  80% {
+    background: linear-gradient(263deg, #222222, #99E2D0 50%);
+  }
+  90% {
+    background: linear-gradient(299deg, #222222, #99E2D0 50%);
+  }
+  100% {
+    background: linear-gradient(335deg, #222222, #99E2D0 50%);
+  }
+}
+@keyframes blur {
+  0% {
+    filter: blur(7px);
+  }
+  90% {
+    filter: blur(7px);
+  }
+  100% {
+    filter: none;
+  }
+}
+@keyframes loader_display {
+  0% {
+    opacity: 100%;
+  }
+  80% {
+    opacity: 95%;
+  }
+  100% {
+    opacity: 0%;
+    display: none;
+    z-index: 0;
+  }
+}
+@keyframes scroll {
+  0% {
+    overflow-y: hidden;
+  }
+  100% {
+    overflow-y: hidden;
+  }
+}
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  opacity: 100%;
+  animation: loader_display 3s linear forwards;
+}
+.loader .backlight {
+  animation: backlight 1500ms linear infinite;
+}
+.loader .identity--background--light {
+  animation: light 1500ms linear infinite;
+}
+.loader .identity--background--shadow {
+  animation: shadow 1500ms linear infinite;
+}
+.loader .backlight {
+  content: "";
+  position: absolute;
+  background: linear-gradient(83deg, #222222, #fff 50%);
+  opacity: 85%;
+  width: 100%;
+  height: 100%;
+}
+.loader .identity--background--light {
+  position: absolute;
+  font-family: "shrikhand", sans-serif;
+  font-weight: 100;
+  text-shadow: -2px -2px 3px #c1ede2;
+  font-size: 40px;
+  color: #c1ede2;
+  margin: auto;
+}
+.loader .identity--background--shadow {
+  position: absolute;
+  font-family: "shrikhand", sans-serif;
+  font-weight: 100;
+  text-shadow: 2px 2px 3px black;
+  font-size: 40px;
+  color: black;
+  margin: auto;
+}
+.loader .identity--color {
+  position: absolute;
+  font-family: "shrikhand", sans-serif;
+  font-weight: 100;
+  font-size: 40px;
+  color: #9356DC;
+  background: linear-gradient(to left top, #8641d8, #ff60d3);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: auto;
+  padding: 20px;
+}
+
+.blur {
+  filter: none;
+  animation: blur 3s linear;
+}
+
+html {
+  overflow-y: visible;
+  animation: scroll 2.5s;
 }
 
 .main {
@@ -108,13 +263,13 @@ header {
   margin: 30px 0 40px 0;
   width: 240px;
   height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 25px;
   border: none;
   font-family: "Roboto", sans-serif;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
   color: #fff;
   font-size: medium;
   font-weight: 500;
@@ -167,10 +322,7 @@ header {
   align-items: center;
   white-space: nowrap;
   cursor: default;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
   box-sizing: border-box;
   height: 75px;
   width: 100%;
@@ -260,18 +412,17 @@ header {
   box-shadow: 3px 3px 8px #c7c7c7;
   border-radius: 20px;
   margin: 0 20px 20px 20px;
+  position: relative;
   overflow: hidden;
 }
 .main .restos .resto__img {
-  position: relative;
   width: 100%;
   height: 180px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .main .restos .resto__btn {
   position: absolute;
-  right: 40px;
+  right: 20px;
   margin-top: 20px;
   background-color: #99E2D0;
   color: #1b6150;
@@ -282,61 +433,52 @@ header {
 }
 .main .restos .resto__legend {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: flex-start;
   height: 85px;
   margin: 15px;
 }
-.main .restos .resto__legend__txt {
-  flex-direction: column;
-  justify-content: flex-start;
-}
-.main .restos .resto__legend__txt__h3 {
+.main .restos .resto__legend__h3 {
   font-size: large;
   margin: 0;
 }
-.main .restos .resto__legend__txt__location {
+.main .restos .resto__legend__location {
   margin: 0px;
 }
-.main .restos .resto__legend__like {
-  display: block;
-  cursor: default;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+.main .restos .resto__like {
   margin-right: 5px;
   font-size: 28px;
-  position: relative;
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
 }
-.main .restos .resto__legend__like--full {
+.main .restos .resto__like--full {
+  position: relative;
   color: #9356DC;
   background: linear-gradient(to top, #FF79DA 40%, #9356DC);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  z-index: 0;
 }
-.main .restos .resto__legend__like--mask {
+.main .restos .resto__like--mask {
   position: absolute;
   color: #fff;
-  background-color: transparent;
+  background-color: #fff;
   top: -1px;
   left: -1px;
-  z-index: 1;
   transform-origin: top;
   transform: scale(1.1);
   transition: 600ms ease-in-out 100ms;
 }
-.main .restos .resto__legend__like:hover .resto__legend__like--mask, .main .restos .resto__legend__like:focus .resto__legend__like--mask, .main .restos .resto__legend__like:active .resto__legend__like--mask {
-  transform: scale(0%);
+.main .restos .resto__like:hover .resto__like--mask, .main .restos .resto__like:focus .resto__like--mask, .main .restos .resto__like:active .resto__like--mask {
+  transform: scaley(0);
 }
-.main .restos .resto__legend__like--empty {
+.main .restos .resto__like--empty {
   position: absolute;
   top: 1px;
   left: -2px;
-  padding: auto;
   font-size: 31px;
   background-color: transparent;
-  z-index: 2;
 }
+
+/*# sourceMappingURL=main.css.map */

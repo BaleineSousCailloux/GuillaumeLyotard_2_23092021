@@ -24,7 +24,7 @@ header {
   width: 100%;
   height: 60px;
   padding-top: 10px;
-  overflow: hidden;
+  box-shadow: 0px 3px 6px #c3c3c3;
 }
 
 .logo {
@@ -68,17 +68,19 @@ header .home__btn {
   position: absolute;
   font-size: 24px;
   left: 20px;
+  box-shadow: none;
 }
 
 .resto {
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 .resto__img {
   position: relative;
   width: 100%;
   height: 270px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   overflow: hidden;
 }
 .resto__id {
@@ -98,41 +100,37 @@ header .home__btn {
   font-size: 28px;
 }
 .resto__id__like {
-  display: block;
-  cursor: default;
   font-size: 28px;
   position: relative;
 }
 .resto__id__like--full {
+  position: relative;
   color: #9356DC;
   background: linear-gradient(to top, #FF79DA 40%, #9356DC);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  z-index: 0;
 }
 .resto__id__like--mask {
   position: absolute;
-  color: #fff;
-  background-color: transparent;
-  top: -1px;
+  color: #f2f2f2;
+  background-color: #f2f2f2;
+  top: 0;
   left: -1px;
-  z-index: 1;
   transform-origin: top;
   transform: scale(1.1);
   transition: 600ms ease-in-out 100ms;
 }
 .resto__id__like:hover .resto__id__like--mask, .resto__id__like:focus .resto__id__like--mask .resto__id__like:active .resto__id__like--mask {
-  transform: scale(0%);
+  transform: scaley(0);
 }
 .resto__id__like--empty {
   position: absolute;
+  color: #000;
   top: 1px;
   left: -2px;
-  padding: auto;
   font-size: 31px;
   background-color: transparent;
-  z-index: 2;
 }
 .resto .menu {
   position: relative;
@@ -153,6 +151,16 @@ header .home__btn {
   border-bottom: 4px solid #99E2D0;
   width: 50px;
 }
+@keyframes apparition {
+  0% {
+    transform: translatey(30%);
+    opacity: 0;
+  }
+  100% {
+    transform: translatey(0%);
+    opacity: 1;
+  }
+}
 .resto .menu__part__list {
   list-style-type: none;
   padding: 0;
@@ -162,53 +170,106 @@ header .home__btn {
   flex-direction: row;
   justify-content: space-between;
   box-sizing: border-box;
+  width: 100%;
+  height: 70px;
   background-color: #fff;
   border-radius: 15px;
   box-shadow: 3px 3px 8px #c7c7c7;
   margin-bottom: 20px;
   overflow: hidden;
+  animation: apparition 400ms ease-in-out both;
+}
+.resto .menu__part__list .item--1 {
+  animation-delay: 200ms;
+}
+.resto .menu__part__list .item--2 {
+  animation-delay: 400ms;
+}
+.resto .menu__part__list .item--3 {
+  animation-delay: 600ms;
+}
+.resto .menu__part__list .item:hover .item__btn, .resto .menu__part__list .item:focus .item__btn, .resto .menu__part__list .item:active .item__btn {
+  width: 30%;
+  transform: translatex(0%);
+}
+.resto .menu__part__list .item:hover .item__btn__check, .resto .menu__part__list .item:focus .item__btn__check, .resto .menu__part__list .item:active .item__btn__check {
+  transform: translatex(0) rotate(360deg);
+}
+.resto .menu__part__list .item:hover .item__legend, .resto .menu__part__list .item:focus .item__legend, .resto .menu__part__list .item:active .item__legend {
+  width: 70%;
 }
 .resto .menu__part__list .item__legend {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  flex-wrap: nowrap;
+  justify-content: flex-start;
+  width: 100%;
+  white-space: nowrap;
+  padding: 0;
   margin: 15px;
+  transition: width 350ms ease-in-out;
 }
 .resto .menu__part__list .item__legend__h3 {
   font-size: 17px;
   font-weight: 600;
   margin: 0;
+  padding: 0;
 }
 .resto .menu__part__list .item__legend__txt {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
   margin: 5px 0 0 0;
+  padding: 0;
   font-size: 14px;
 }
-.resto .menu__part__list .item__price {
-  align-self: flex-end;
-  margin-right: 15px;
+.resto .menu__part__list .item__legend__txt__detail {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: calc(100% - 25px);
+}
+.resto .menu__part__list .item__legend__txt__price {
+  width: 25px;
+  padding-left: 10px;
+  font-weight: 600;
 }
 .resto .menu__part__list .item__btn {
-  display: none;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 0%;
+  background-color: #99E2D0;
+  font-size: 25px;
+  transform: translatex(100%);
+  transition: all 350ms ease-in-out;
+  overflow: hidden;
+}
+.resto .menu__part__list .item__btn__check {
+  position: absolute;
+  color: #fff;
+  transform: translatex(75%) rotate(0deg);
+  transition: transform 300ms 200ms ease-in-out;
 }
 .resto .order {
   width: 100%;
-  display: inline-block;
-  text-align: center;
+  display: inline-flex;
+  justify-content: center;
   background-color: #f2f2f2;
   margin-top: 0;
 }
-.resto .order .order__btn {
+.resto .order__btn {
+  text-align: center;
   margin: 0px 0 50px 0;
   width: 240px;
   height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 25px;
   border: none;
   font-family: "Roboto", sans-serif;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
   color: #fff;
   font-size: medium;
   font-weight: 500;
@@ -218,10 +279,10 @@ header .home__btn {
   position: relative;
   z-index: 1;
 }
-.resto .order .order__btn:hover::after, .resto .order .order__btn:focus::after, .resto .order .order__btn:active::after {
+.resto .order__btn:hover::after, .resto .order__btn:focus::after, .resto .order__btn:active::after {
   opacity: 1;
 }
-.resto .order .order__btn::after {
+.resto .order__btn::after {
   content: "Commander";
   display: flex;
   justify-content: center;
@@ -239,3 +300,5 @@ header .home__btn {
   border-radius: 25px;
   transition: all 400ms;
 }
+
+/*# sourceMappingURL=retaurant.css.map */
