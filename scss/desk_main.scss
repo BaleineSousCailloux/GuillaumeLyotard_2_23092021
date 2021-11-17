@@ -1,0 +1,118 @@
+@use "./base/body";
+@use "./base/link";
+@use "./layouts/header";
+@use "./layouts/logo";
+@use "./layouts/footer";
+@import "./utils/mixins";
+
+.main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    .options {
+        width: 50%;
+        height: 280px;
+        margin: 60px 0 0 0;
+        .location {
+            position: absolute;
+            line-height: 60px;
+            z-index: -1;
+            top: 0;
+            left: 0;
+        }
+        .search {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: left;
+            background: linear-gradient(to bottom,$fond_3,$fond_1 10%);
+            &__h1 {
+                font-size: xx-large;
+                font-weight: bold;
+                margin: 20px 100px 0 100px;
+                text-shadow: 2px 2px 5px $tertiaire;
+                &::before {
+                    content:'"';
+                }
+                &::after {
+                    content:'"';
+                }
+            }
+            &__p {
+                font-size: x-large;
+                font-weight: 400;
+                margin: 20px 100px 0 100px;
+                text-shadow: 1px 1px 3px $tertiaire;
+            }
+            &__btn {
+                display: none;
+            }
+        }
+    }
+    .running {
+        width: 50%;
+        height: 280px;
+        margin: 60px 0 0 0;
+        background: linear-gradient(to bottom,$fond_3,$fond_1 10%);
+        &__h3 {
+            display: none;
+        }
+        &__assist {
+            margin: 50px 170px 0 170px;
+            li {
+                height: 50px;
+            }
+            &__ico {
+                font-size: larger;
+            }
+            &__ico--active {
+                font-size: larger;
+            }
+            &__txt {
+                font-size: medium;
+            }
+            &__number {
+                font-size:small;
+                height: 24px;
+                width: 24px;
+                line-height: 24px;
+                background-color:lighten($primaire, 10%);
+                left: -12px;
+            }
+        }
+    }
+    .restos {
+        width: 100%;
+        margin: 0;
+        &__h2 {
+            margin: -20px 100px 40px 100px;
+            text-align: center;
+            font-size: xx-large;
+            @include police--titres;
+        }
+        &__liste {
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 0 70px 0 70px;
+        }
+        .resto {
+            width: 22.5%;
+            margin: 0 0 30px 0;
+        }
+    }
+}
+.footer {
+    padding: 20px 150px 20px 150px;
+    &__h4 {
+        display: none;
+    }
+    &__list {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}

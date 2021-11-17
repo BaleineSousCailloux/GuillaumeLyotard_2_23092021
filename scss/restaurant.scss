@@ -7,11 +7,11 @@
 
 
 header {
+    box-shadow: none;
     .home__btn {
     position: absolute;
     font-size: 24px;
     left: 20px;
-    box-shadow: none;
     }
 }
 .resto {
@@ -139,13 +139,14 @@ header {
                         width: 100%;
                         white-space: nowrap;
                         padding: 0;
-                        margin: 15px;
+                        padding: 15px;
                         transition: width 350ms ease-in-out; 
                         &__h3 {
                             font-size: 17px;
                             font-weight: 600;
                             margin: 0;
                             padding: 0;
+                            text-overflow: ellipsis;
                         }
                         &__txt {
                             display: flex;
@@ -158,11 +159,11 @@ header {
                             &__detail {
                                 text-overflow: ellipsis;
                                 overflow: hidden;
-                                width: calc(100% - 25px);
+                                width: calc(100% - 35px);
                             }
                             &__price {
                                 width: 25px;
-                                padding-left: 10px;
+                                padding: 0 0 0 10px;
                                 font-weight: 600;
                             }
                         }

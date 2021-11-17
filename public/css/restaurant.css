@@ -64,11 +64,13 @@ header {
   margin-left: 22px;
 }
 
+header {
+  box-shadow: none;
+}
 header .home__btn {
   position: absolute;
   font-size: 24px;
   left: 20px;
-  box-shadow: none;
 }
 
 .resto {
@@ -205,7 +207,7 @@ header .home__btn {
   width: 100%;
   white-space: nowrap;
   padding: 0;
-  margin: 15px;
+  padding: 15px;
   transition: width 350ms ease-in-out;
 }
 .resto .menu__part__list .item__legend__h3 {
@@ -213,6 +215,7 @@ header .home__btn {
   font-weight: 600;
   margin: 0;
   padding: 0;
+  text-overflow: ellipsis;
 }
 .resto .menu__part__list .item__legend__txt {
   display: flex;
@@ -226,11 +229,11 @@ header .home__btn {
 .resto .menu__part__list .item__legend__txt__detail {
   text-overflow: ellipsis;
   overflow: hidden;
-  width: calc(100% - 25px);
+  width: calc(100% - 35px);
 }
 .resto .menu__part__list .item__legend__txt__price {
   width: 25px;
-  padding-left: 10px;
+  padding: 0 0 0 10px;
   font-weight: 600;
 }
 .resto .menu__part__list .item__btn {
@@ -301,4 +304,4 @@ header .home__btn {
   transition: all 400ms;
 }
 
-/*# sourceMappingURL=retaurant.css.map */
+/*# sourceMappingURL=restaurant.css.map */

@@ -1,0 +1,87 @@
+@use "./base/body";
+@use "./base/link";
+@use "./layouts/header";
+@use "./layouts/logo";
+@use "./layouts/footer";
+@import "./utils/mixins";
+
+.resto {
+    &__id {
+        justify-content: center;
+        align-items: center;
+        border-bottom: 4px solid $tertiaire;
+        margin-bottom: 20px;
+        &__h1 {
+            font-size: 32px;
+            padding: 0 20px 0 30px;
+            border-bottom: 4px solid $secondaire;
+        }
+        &__like {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 5px;
+            &--full {
+                position: absolute;
+            }
+            &--mask {
+                top: 11px;
+                left: 11px;
+            }
+            &--empty {
+                top: 10px;
+                left: 10px;
+            }
+        } 
+    }
+    .menu {
+        padding: 0px 50px 20px 50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        &__part {
+            margin-bottom: 20px;
+            width: 30%;
+            &__list {
+                .item {
+                    height: 80px;
+                    &:hover .item__btn, &:focus .item__btn, &:active .item__btn {
+                        width: 30%;
+                        transform: translatex(0%);
+                        &__check {
+                            transform: translatex(0) rotate(360deg);
+                        }
+                    }
+                    &:hover .item__legend, &:focus .item__legend, &:active .item__legend {
+                        width: 70%;
+                    }
+                    &__legend {
+                        &__h3 {
+                            font-size: 19px;
+                        }
+                        &__txt {
+                            font-size: 16px;
+                            width: 90%;
+                        }  
+                    }
+                    &__btn {
+                        font-size: 28px;
+                    }
+                }
+            }
+        }
+    }
+}
+.footer {
+    padding: 20px 150px 20px 150px;
+    &__h4 {
+        display: none;
+    }
+    &__list {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
