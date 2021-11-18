@@ -66,59 +66,89 @@ header {
 
 @keyframes light {
   25% {
-    transform: translate(3px, 0px);
+    transform: translate(2px, 0px);
   }
   50% {
-    transform: translate(0px, 3px);
+    transform: translate(0px, 2px);
   }
   75% {
-    transform: translate(-3px, 0px);
+    transform: translate(-2px, 0px);
   }
 }
 @keyframes shadow {
   25% {
-    transform: translate(-3px, 0px);
+    transform: translate(-2px, 0px);
   }
   50% {
-    transform: translate(0px, -3px);
+    transform: translate(0px, -2px);
   }
   75% {
-    transform: translate(3px, 0px);
+    transform: translate(2px, 0px);
   }
 }
 @keyframes backlight {
   0% {
-    background: linear-gradient(-25deg, #222222, #99E2D0 50%);
+    background: linear-gradient(-25deg, #9356DC, #99E2D0 40%);
+  }
+  5% {
+    background: linear-gradient(-7deg, #222222, #fff 40%);
   }
   10% {
-    background: linear-gradient(11deg, #222222, #99E2D0 50%);
+    background: linear-gradient(11deg, #9356DC, #99E2D0 40%);
+  }
+  15% {
+    background: linear-gradient(29deg, #222222, #fff 40%);
   }
   20% {
-    background: linear-gradient(47deg, #222222, #99E2D0 50%);
+    background: linear-gradient(47deg, #9356DC, #99E2D0 40%);
+  }
+  25% {
+    background: linear-gradient(65deg, #222222, #fff 40%);
   }
   30% {
-    background: linear-gradient(83deg, #222222, #99E2D0 50%);
+    background: linear-gradient(83deg, #9356DC, #99E2D0 40%);
+  }
+  35% {
+    background: linear-gradient(101deg, #222222, #fff 40%);
   }
   40% {
-    background: linear-gradient(119deg, #222222, #99E2D0 50%);
+    background: linear-gradient(119deg, #9356DC, #99E2D0 40%);
+  }
+  45% {
+    background: linear-gradient(137deg, #222222, #fff 40%);
   }
   50% {
-    background: linear-gradient(155deg, #222222, #99E2D0 50%);
+    background: linear-gradient(155deg, #9356DC, #99E2D0 40%);
+  }
+  55% {
+    background: linear-gradient(173deg, #222222, #fff 40%);
   }
   60% {
-    background: linear-gradient(191deg, #222222, #99E2D0 50%);
+    background: linear-gradient(191deg, #9356DC, #99E2D0 40%);
+  }
+  65% {
+    background: linear-gradient(209deg, #222222, #fff 40%);
   }
   70% {
-    background: linear-gradient(227deg, #222222, #99E2D0 50%);
+    background: linear-gradient(227deg, #9356DC, #99E2D0 40%);
+  }
+  75% {
+    background: linear-gradient(245deg, #222222, #fff 40%);
   }
   80% {
-    background: linear-gradient(263deg, #222222, #99E2D0 50%);
+    background: linear-gradient(263deg, #9356DC, #99E2D0 40%);
+  }
+  85% {
+    background: linear-gradient(281deg, #222222, #fff 40%);
   }
   90% {
-    background: linear-gradient(299deg, #222222, #99E2D0 50%);
+    background: linear-gradient(299deg, #9356DC, #99E2D0 40%);
+  }
+  95% {
+    background: linear-gradient(317deg, #222222, #fff 40%);
   }
   100% {
-    background: linear-gradient(335deg, #222222, #99E2D0 50%);
+    background: linear-gradient(335deg, #9356DC, #99E2D0 40%);
   }
 }
 @keyframes blur {
@@ -129,7 +159,7 @@ header {
     filter: blur(7px);
   }
   100% {
-    filter: none;
+    filter: blur(0px);
   }
 }
 @keyframes loader_display {
@@ -162,7 +192,7 @@ header {
   height: 100%;
   z-index: 4;
   opacity: 100%;
-  animation: loader_display 3s linear forwards;
+  animation: loader_display 3s 200ms linear both;
 }
 .loader .backlight {
   animation: backlight 1500ms linear infinite;
@@ -185,16 +215,16 @@ header {
   position: absolute;
   font-family: "shrikhand", sans-serif;
   font-weight: 100;
-  text-shadow: -2px -2px 3px #c1ede2;
+  text-shadow: -1px -1px 1px white;
   font-size: 40px;
-  color: #c1ede2;
+  color: white;
   margin: auto;
 }
 .loader .identity--background--shadow {
   position: absolute;
   font-family: "shrikhand", sans-serif;
   font-weight: 100;
-  text-shadow: 2px 2px 3px black;
+  text-shadow: 1px 1px 1px black;
   font-size: 40px;
   color: black;
   margin: auto;
@@ -215,7 +245,7 @@ header {
 
 .blur {
   filter: none;
-  animation: blur 3s linear;
+  animation: blur 2.9s linear;
 }
 
 html {

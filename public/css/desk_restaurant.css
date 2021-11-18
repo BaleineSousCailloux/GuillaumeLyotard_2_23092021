@@ -122,7 +122,6 @@ header {
 }
 .resto .menu__part__list .item__legend__txt {
   font-size: 16px;
-  width: 90%;
 }
 .resto .menu__part__list .item__btn {
   font-size: 28px;
@@ -139,5 +138,3 @@ header {
   flex-direction: row;
   justify-content: space-between;
 }
-
-/*# sourceMappingURL=desk_restaurant.css.map */

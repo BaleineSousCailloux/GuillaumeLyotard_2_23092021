@@ -7,59 +7,89 @@
 
 @keyframes light {
     25% {
-        transform: translate(3px, 0px);
+        transform: translate(2px, 0px);
     }
     50% {
-        transform: translate(0px, 3px);
+        transform: translate(0px, 2px);
     }
     75% {
-        transform: translate(-3px, 0px);
+        transform: translate(-2px, 0px);
     }
 }
 @keyframes shadow {
     25% {
-        transform: translate(-3px, 0px);
+        transform: translate(-2px, 0px);
     }
     50% {
-        transform: translate(0px, -3px);
+        transform: translate(0px, -2px);
     }
     75% {
-        transform: translate(3px, 0px);
+        transform: translate(2px, 0px);
     }
 }
 @keyframes backlight {
     0% {
-        background: linear-gradient(-25deg, $fond_3, $tertiaire  50%);
+        background: linear-gradient(-25deg, $primaire, $tertiaire  40%);
+    }
+    5% {
+        background: linear-gradient(-7deg, $fond_3, $fond_1  40%);
     }
     10% {
-        background: linear-gradient(11deg, $fond_3, $tertiaire  50%);
+        background: linear-gradient(11deg, $primaire, $tertiaire  40%);
+    }
+    15% {
+        background: linear-gradient(29deg, $fond_3, $fond_1  40%);
     }
     20% {
-        background: linear-gradient(47deg, $fond_3, $tertiaire  50%);
+        background: linear-gradient(47deg, $primaire, $tertiaire  40%);
+    }
+    25% {
+        background: linear-gradient(65deg, $fond_3, $fond_1  40%);
     }
     30% {
-        background: linear-gradient(83deg, $fond_3, $tertiaire  50%);
+        background: linear-gradient(83deg, $primaire, $tertiaire  40%);
+    }
+    35% {
+        background: linear-gradient(101deg, $fond_3, $fond_1  40%);
     }
     40% {
-        background: linear-gradient(119deg, $fond_3,  $tertiaire  50%);
+        background: linear-gradient(119deg, $primaire,  $tertiaire  40%);
+    }
+    45% {
+        background: linear-gradient(137deg, $fond_3, $fond_1  40%);
     }
     50% {
-        background: linear-gradient(155deg, $fond_3,  $tertiaire  50%);
+        background: linear-gradient(155deg, $primaire,  $tertiaire  40%);
+    }
+    55% {
+        background: linear-gradient(173deg, $fond_3, $fond_1  40%);
     }
     60% {
-        background: linear-gradient(191deg, $fond_3,  $tertiaire 50%);
+        background: linear-gradient(191deg, $primaire,  $tertiaire 40%);
+    }
+    65% {
+        background: linear-gradient(209deg, $fond_3, $fond_1  40%);
     }
     70% {
-        background: linear-gradient(227deg, $fond_3, $tertiaire  50%);
+        background: linear-gradient(227deg, $primaire, $tertiaire  40%);
+    }
+    75% {
+        background: linear-gradient(245deg, $fond_3, $fond_1  40%);
     }
     80% {
-        background: linear-gradient(263deg, $fond_3,  $tertiaire  50%);
+        background: linear-gradient(263deg, $primaire,  $tertiaire  40%);
+    }
+    85% {
+        background: linear-gradient(281deg, $fond_3, $fond_1  40%);
     }
     90% {
-        background: linear-gradient(299deg, $fond_3,  $tertiaire  50%);
+        background: linear-gradient(299deg, $primaire,  $tertiaire  40%);
+    }
+    95% {
+        background: linear-gradient(317deg, $fond_3, $fond_1  40%);
     }
     100% {
-        background: linear-gradient(335deg, $fond_3,  $tertiaire  50%);
+        background: linear-gradient(335deg, $primaire,  $tertiaire  40%);
     }
 }
 @keyframes blur {
@@ -70,7 +100,7 @@
         filter: blur(7px);
     }
     100% {
-        filter: none;
+        filter: blur(0px);
     }
 }
 @keyframes loader_display {
@@ -104,7 +134,7 @@
     height: 100%;
     z-index: 4;
     opacity: 100%;
-    animation: loader_display 3s linear forwards;
+    animation: loader_display 3s 200ms linear both;
     .backlight {
         animation: backlight 1500ms linear infinite;
     }
@@ -125,15 +155,15 @@
     .identity--background--light {
         position: absolute;
         @include police--titres;
-        text-shadow: -2px -2px 3px lighten($tertiaire, 10%);
+        text-shadow: -1px -1px 1px lighten($fond_1, 10%);
         font-size: 40px;
-        color: lighten($tertiaire, 10%);
+        color: lighten($fond_1, 10%);
         margin: auto;
     }
     .identity--background--shadow {
         position: absolute;
         @include police--titres;
-        text-shadow: 2px 2px 3px black;
+        text-shadow: 1px 1px 1px black;
         font-size: 40px;
         color: black;
         margin: auto;
@@ -153,7 +183,7 @@
 }
 .blur {
     filter: none;
-    animation: blur 3s linear;
+    animation: blur 2.9s linear;
 }
 html {
     overflow-y: visible;

@@ -124,7 +124,7 @@ header {
                     }
                     &:hover .item__btn, &:focus .item__btn, &:active .item__btn {
                         width: 30%;
-                        transform: translatex(0%);
+                        
                         &__check {
                             transform: translatex(0) rotate(360deg);
                         }
@@ -133,6 +133,7 @@ header {
                         width: 70%;
                     }
                     &__legend {
+                        box-sizing: border-box;
                         display: flex;
                         flex-direction: column;
                         justify-content: flex-start;
@@ -140,7 +141,7 @@ header {
                         white-space: nowrap;
                         padding: 0;
                         padding: 15px;
-                        transition: width 350ms ease-in-out; 
+                        transition: width 600ms ease-in-out; 
                         &__h3 {
                             font-size: 17px;
                             font-weight: 600;
@@ -176,14 +177,14 @@ header {
                         width: 0%;
                         background-color: $tertiaire;
                         font-size: 25px;
-                        transform: translatex(100%);
-                        transition: all 350ms ease-in-out;
+                        
+                        transition: all 600ms ease-in-out;
                         overflow: hidden;
                         &__check {
                             position: absolute;
                             color: $fond_1;
                             transform: translatex(75%) rotate(0deg);
-                            transition: transform 300ms 200ms ease-in-out;
+                            transition: transform 400ms 200ms ease-in-out;
                         }
                     }
                 }
