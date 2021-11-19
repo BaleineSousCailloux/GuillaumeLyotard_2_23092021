@@ -61,9 +61,10 @@
             display: none;
         }
         &__assist {
-            margin: 50px 170px 0 170px;
+            margin: 50px 50px 0 50px;
             li {
                 height: 50px;
+                width: 350px;
             }
             &__ico {
                 font-size: larger;
@@ -101,7 +102,26 @@
         }
         .resto {
             width: 22.5%;
+            height: 230px;
             margin: 0 0 30px 0;
+            &__img {
+                height: 165px;
+            }
+            &__legend {
+                margin: 10px;
+                height: 75px;
+                &__h3 {
+                    font-size: medium;
+                }
+                &__location {
+                    font-size: small;
+                }
+            }
+            &__like {
+                transform: scale(0.7);
+                bottom: 20px;
+                right: 0;
+            }
         }
     }
 }

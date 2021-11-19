@@ -47,22 +47,12 @@
             &__list {
                 .item {
                     height: 80px;
-                    &:hover .item__btn, &:focus .item__btn, &:active .item__btn {
-                        width: 30%;
-                        transform: translatex(0%);
-                        &__check {
-                            transform: translatex(0) rotate(360deg);
-                        }
-                    }
-                    &:hover .item__legend, &:focus .item__legend, &:active .item__legend {
-                        width: 70%;
-                    }
                     &__legend {
                         &__h3 {
-                            font-size: 19px;
+                            font-size: 17px;
                         }
                         &__txt {
-                            font-size: 16px;
+                            font-size: 14px;
                         }  
                     }
                     &__btn {

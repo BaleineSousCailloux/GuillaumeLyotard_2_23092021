@@ -122,10 +122,11 @@ header {
   display: none;
 }
 .main .running__assist {
-  margin: 50px 170px 0 170px;
+  margin: 50px 50px 0 50px;
 }
 .main .running__assist li {
   height: 50px;
+  width: 350px;
 }
 .main .running__assist__ico {
   font-size: larger;
@@ -163,7 +164,26 @@ header {
 }
 .main .restos .resto {
   width: 22.5%;
+  height: 230px;
   margin: 0 0 30px 0;
+}
+.main .restos .resto__img {
+  height: 165px;
+}
+.main .restos .resto__legend {
+  margin: 10px;
+  height: 75px;
+}
+.main .restos .resto__legend__h3 {
+  font-size: medium;
+}
+.main .restos .resto__legend__location {
+  font-size: small;
+}
+.main .restos .resto__like {
+  transform: scale(0.7);
+  bottom: 20px;
+  right: 0;
 }
 
 .footer {
@@ -177,5 +197,3 @@ header {
   flex-direction: row;
   justify-content: space-between;
 }
-
-/*# sourceMappingURL=desk_main.css.map */

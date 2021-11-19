@@ -16,18 +16,7 @@ header {
             &__list {
                 .item {
                     height: 85px;
-                    &:hover .item__btn, &:focus .item__btn, &:active .item__btn {
-                        width: 20%;
-                        transform: translatex(0%);
-                        &__check {
-                            transform: translatex(0) rotate(360deg);
-                        }
-                    }
-                    &:hover .item__legend, &:focus .item__legend, &:active .item__legend {
-                        width: 80%;
-                    }
                     &__legend {
-                        padding: 20px;
                         &__h3 {
                             font-size: 18px;
                         }

@@ -107,21 +107,11 @@ header {
 .resto .menu__part__list .item {
   height: 80px;
 }
-.resto .menu__part__list .item:hover .item__btn, .resto .menu__part__list .item:focus .item__btn, .resto .menu__part__list .item:active .item__btn {
-  width: 30%;
-  transform: translatex(0%);
-}
-.resto .menu__part__list .item:hover .item__btn__check, .resto .menu__part__list .item:focus .item__btn__check, .resto .menu__part__list .item:active .item__btn__check {
-  transform: translatex(0) rotate(360deg);
-}
-.resto .menu__part__list .item:hover .item__legend, .resto .menu__part__list .item:focus .item__legend, .resto .menu__part__list .item:active .item__legend {
-  width: 70%;
-}
 .resto .menu__part__list .item__legend__h3 {
-  font-size: 19px;
+  font-size: 17px;
 }
 .resto .menu__part__list .item__legend__txt {
-  font-size: 16px;
+  font-size: 14px;
 }
 .resto .menu__part__list .item__btn {
   font-size: 28px;

@@ -190,20 +190,23 @@ header .home__btn {
 .resto .menu__part__list .item--3 {
   animation-delay: 600ms;
 }
+.resto .menu__part__list .item--4 {
+  animation-delay: 800ms;
+}
 .resto .menu__part__list .item:hover .item__btn, .resto .menu__part__list .item:focus .item__btn, .resto .menu__part__list .item:active .item__btn {
-  width: 30%;
+  width: 25%;
 }
 .resto .menu__part__list .item:hover .item__btn__check, .resto .menu__part__list .item:focus .item__btn__check, .resto .menu__part__list .item:active .item__btn__check {
   transform: translatex(0) rotate(360deg);
 }
 .resto .menu__part__list .item:hover .item__legend, .resto .menu__part__list .item:focus .item__legend, .resto .menu__part__list .item:active .item__legend {
-  width: 70%;
+  width: 75%;
 }
 .resto .menu__part__list .item__legend {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-around;
   width: 100%;
   white-space: nowrap;
   padding: 0;
@@ -215,14 +218,16 @@ header .home__btn {
   font-weight: 600;
   margin: 0;
   padding: 0;
+  width: 100%;
   text-overflow: ellipsis;
+  overflow: hidden;
 }
 .resto .menu__part__list .item__legend__txt {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  margin: 5px 0 0 0;
+  margin: 0;
   padding: 0;
   font-size: 14px;
 }

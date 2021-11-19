@@ -117,26 +117,26 @@ header {
                     margin-bottom: 20px;
                     overflow: hidden;
                     animation: apparition 400ms ease-in-out both;
-                    @for $i from 1 through 3 {
+                    @for $i from 1 through 4 {
                         &--#{$i} {
                             animation-delay: 200ms * $i;
                          }
                     }
                     &:hover .item__btn, &:focus .item__btn, &:active .item__btn {
-                        width: 30%;
+                        width: 25%;
                         
                         &__check {
                             transform: translatex(0) rotate(360deg);
                         }
                     }
                     &:hover .item__legend, &:focus .item__legend, &:active .item__legend {
-                        width: 70%;
+                        width: 75%;
                     }
                     &__legend {
                         box-sizing: border-box;
                         display: flex;
                         flex-direction: column;
-                        justify-content: flex-start;
+                        justify-content: space-around;
                         width: 100%;
                         white-space: nowrap;
                         padding: 0;
@@ -147,14 +147,16 @@ header {
                             font-weight: 600;
                             margin: 0;
                             padding: 0;
+                            width: 100%;
                             text-overflow: ellipsis;
+                            overflow: hidden;
                         }
                         &__txt {
                             display: flex;
                             flex-direction: row;
                             justify-content: space-between;
                             width: 100%;
-                            margin: 5px 0 0 0;
+                            margin: 0;
                             padding: 0;
                             font-size: 14px;
                             &__detail {
@@ -177,7 +179,6 @@ header {
                         width: 0%;
                         background-color: $tertiaire;
                         font-size: 25px;
-                        
                         transition: all 600ms ease-in-out;
                         overflow: hidden;
                         &__check {
