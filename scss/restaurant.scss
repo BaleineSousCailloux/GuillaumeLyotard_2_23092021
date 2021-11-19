@@ -1,9 +1,10 @@
+@use "./utils/variables" as v;
+@use "./utils/mixins" as m;
 @use "./base/body";
 @use "./base/link";
 @use "./layouts/header";
 @use "./layouts/logo";
 @use "./layouts/footer";
-@import "./utils/mixins";
 
 
 header {
@@ -32,12 +33,11 @@ header {
         justify-content: space-between;
         align-items: center;
         padding: 10px 20px 30px 20px;
-        background-color: $fond_2;
+        background-color: v.$fond_2;
         border-radius: 30px 30px 0 0;
         top: -60px;
         &__h1 {
-            font-family: 'shrikhand', sans serif;
-            font-weight:100;
+            @include m.police--titres;
             font-size: 28px;
         }
         &__like {
@@ -45,16 +45,16 @@ header {
             position: relative;
             &--full {
                 position: relative;
-                color: $primaire;
-                @include heart--gradient;
+                color: v.$primaire;
+                @include m.heart--gradient;
                 background-clip: text;
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
             }
             &--mask {
                 position: absolute;
-                color: $fond_2;
-                background-color: $fond_2;
+                color: v.$fond_2;
+                background-color: v.$fond_2;
                 top: 0;
                 left: -1px;
                 transform-origin: top;
@@ -66,7 +66,7 @@ header {
             }
             &--empty {
                 position: absolute;
-                color: $txt_1;
+                color: v.$txt_1;
                 top: 1px;
                 left: -2px;
                 font-size: 31px;
@@ -78,7 +78,7 @@ header {
         position: relative;
         top: -100px;
         padding: 0px 20px 20px 20px;
-        background-color: $fond_2;
+        background-color: v.$fond_2;
         margin-bottom: -100px;
         &__part {
             margin-bottom: 30px;
@@ -88,7 +88,7 @@ header {
                 font-weight: 400;
                 padding-bottom: 5px;
                 margin-left: 10px;
-                border-bottom: 4px solid $tertiaire;
+                border-bottom: 4px solid v.$tertiaire;
                 width: 50px;
             }
             @keyframes apparition {
@@ -111,9 +111,9 @@ header {
                     box-sizing: border-box;
                     width: 100%;
                     height: 70px;
-                    background-color: $fond_1;
+                    background-color: v.$fond_1;
                     border-radius: 15px;
-                    @include box--shadow;
+                    @include m.box--shadow;
                     margin-bottom: 20px;
                     overflow: hidden;
                     animation: apparition 400ms ease-in-out both;
@@ -177,13 +177,13 @@ header {
                         justify-content: center;
                         align-items: center;
                         width: 0%;
-                        background-color: $tertiaire;
+                        background-color: v.$tertiaire;
                         font-size: 25px;
                         transition: all 600ms ease-in-out;
                         overflow: hidden;
                         &__check {
                             position: absolute;
-                            color: $fond_1;
+                            color: v.$fond_1;
                             transform: translatex(75%) rotate(0deg);
                             transition: transform 400ms 200ms ease-in-out;
                         }
@@ -196,15 +196,15 @@ header {
         width: 100%;
         display: inline-flex;
         justify-content: center;
-        background-color: $fond_2;
+        background-color: v.$fond_2;
         margin-top: 0;
         &__btn {
             text-align: center;
             margin: 0px 0 50px 0;
-            @include btn--nav;
+            @include m.btn--nav;
             &::after {
                 content: "Commander";
-                @include btn--nav--active;
+                @include m.btn--nav--active;
             }
         }
     }

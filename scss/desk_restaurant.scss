@@ -1,20 +1,16 @@
-@use "./base/body";
-@use "./base/link";
-@use "./layouts/header";
-@use "./layouts/logo";
-@use "./layouts/footer";
-@import "./utils/mixins";
+@use "./utils/variables" as v;
+@use "./utils/mixins" as m;
 
 .resto {
     &__id {
         justify-content: center;
         align-items: center;
-        border-bottom: 4px solid $tertiaire;
+        border-bottom: 4px solid v.$tertiaire;
         margin-bottom: 20px;
         &__h1 {
             font-size: 32px;
             padding: 0 20px 0 30px;
-            border-bottom: 4px solid $secondaire;
+            border-bottom: 4px solid v.$secondaire;
         }
         &__like {
             width: 50px;

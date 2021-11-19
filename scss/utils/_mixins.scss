@@ -1,19 +1,19 @@
-@import './variables';
+@use './variables' as v;
 
-@mixin box--shadow ($color: $shadow_1) {
+@mixin box--shadow ($color: v.$shadow_1) {
     box-shadow: 3px 3px 8px $color;
 }
 
-@mixin txt--shadow ($color: $shadow_4) {
+@mixin txt--shadow ($color: v.$shadow_4) {
     text-shadow: 1px 1px 2px $color;
 }
 
 @mixin btn--gradient ($lighten: 0%) {
-    background: linear-gradient(to left top, lighten($primaire, $lighten), lighten($secondaire, $lighten));
+    background: linear-gradient(to left top, lighten(v.$primaire, $lighten), lighten(v.$secondaire, $lighten));
 }
 
 @mixin heart--gradient {
-    background: linear-gradient(to top,$secondaire 40%,$primaire);
+    background: linear-gradient(to top,v.$secondaire 40%,v.$primaire);
 }
 
 @mixin police--texte {
@@ -35,7 +35,7 @@
     border: none;
     @include police--texte;
     user-select: none;
-    color: $txt_2;
+    color: v.$txt_2;
     font-size: medium;
     font-weight: 500;
     cursor: pointer;
@@ -62,7 +62,7 @@
     z-index: -1;
     opacity: 0;
     @include btn--gradient(8%);
-    @include box--shadow($shadow_2);
+    @include box--shadow(v.$shadow_2);
     @include txt--shadow;
     border-radius: 25px;
     transition: all 400ms;

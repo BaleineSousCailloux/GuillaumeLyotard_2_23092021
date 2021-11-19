@@ -1,0 +1,186 @@
+@use "../utils/variables" as v;
+@use "../utils/mixins" as m;
+
+@keyframes light {
+    25% {
+        transform: translate(2px, 0px);
+    }
+    50% {
+        transform: translate(0px, 2px);
+    }
+    75% {
+        transform: translate(-2px, 0px);
+    }
+}
+@keyframes shadow {
+    25% {
+        transform: translate(-2px, 0px);
+    }
+    50% {
+        transform: translate(0px, -2px);
+    }
+    75% {
+        transform: translate(2px, 0px);
+    }
+}
+@keyframes backlight {
+    0% {
+        background: linear-gradient(-25deg, v.$primaire, v.$tertiaire  40%);
+    }
+    5% {
+        background: linear-gradient(-7deg, v.$fond_3, v.$fond_1  40%);
+    }
+    10% {
+        background: linear-gradient(11deg, v.$primaire, v.$tertiaire  40%);
+    }
+    15% {
+        background: linear-gradient(29deg, v.$fond_3, v.$fond_1  40%);
+    }
+    20% {
+        background: linear-gradient(47deg, v.$primaire, v.$tertiaire  40%);
+    }
+    25% {
+        background: linear-gradient(65deg, v.$fond_3, v.$fond_1  40%);
+    }
+    30% {
+        background: linear-gradient(83deg, v.$primaire, v.$tertiaire  40%);
+    }
+    35% {
+        background: linear-gradient(101deg, v.$fond_3, v.$fond_1  40%);
+    }
+    40% {
+        background: linear-gradient(119deg, v.$primaire,  v.$tertiaire  40%);
+    }
+    45% {
+        background: linear-gradient(137deg, v.$fond_3, v.$fond_1  40%);
+    }
+    50% {
+        background: linear-gradient(155deg, v.$primaire,  v.$tertiaire  40%);
+    }
+    55% {
+        background: linear-gradient(173deg, v.$fond_3, v.$fond_1  40%);
+    }
+    60% {
+        background: linear-gradient(191deg, v.$primaire,  v.$tertiaire 40%);
+    }
+    65% {
+        background: linear-gradient(209deg, v.$fond_3, v.$fond_1  40%);
+    }
+    70% {
+        background: linear-gradient(227deg, v.$primaire, v.$tertiaire  40%);
+    }
+    75% {
+        background: linear-gradient(245deg, v.$fond_3, v.$fond_1  40%);
+    }
+    80% {
+        background: linear-gradient(263deg, v.$primaire,  v.$tertiaire  40%);
+    }
+    85% {
+        background: linear-gradient(281deg, v.$fond_3, v.$fond_1  40%);
+    }
+    90% {
+        background: linear-gradient(299deg, v.$primaire,  v.$tertiaire  40%);
+    }
+    95% {
+        background: linear-gradient(317deg, v.$fond_3, v.$fond_1  40%);
+    }
+    100% {
+        background: linear-gradient(335deg, v.$primaire,  v.$tertiaire  40%);
+    }
+}
+@keyframes blur {
+    0% {
+        filter: blur(7px);
+    }
+    90% {
+        filter: blur(7px);
+    }
+    100% {
+        filter: blur(0px);
+    }
+}
+@keyframes loader_display {
+    0% {
+        opacity: 100%;
+    }
+    80% {
+        opacity: 95%;
+    }
+    100% {
+        opacity: 0%;
+        display: none;
+        z-index: 0;
+    }
+}
+@keyframes scroll_off {
+    0% {
+        overflow-y: hidden;
+    }
+    100% { 
+        overflow-y: hidden;
+    }
+}
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    opacity: 100%;
+    animation: loader_display 3s 200ms linear both;
+    .backlight {
+        animation: backlight 1500ms linear infinite;
+    }
+    .identity--background--light {
+        animation: light 1500ms linear infinite;
+    }
+    .identity--background--shadow {
+        animation: shadow 1500ms linear infinite;
+    }
+    .backlight {
+        content: "";
+        position: absolute;
+        background: linear-gradient(83deg, v.$fond_3, v.$fond_1 50%);
+        opacity: 85%;
+        width: 100%;
+        height: 100%;
+    }
+    .identity--background--light {
+        position: absolute;
+        @include m.police--titres;
+        text-shadow: -1px -1px 1px lighten(v.$fond_1, 10%);
+        font-size: 40px;
+        color: lighten(v.$txt_2, 10%);
+        margin: auto;
+    }
+    .identity--background--shadow {
+        position: absolute;
+        @include m.police--titres;
+        text-shadow: 1px 1px 1px v.$fond_3;
+        font-size: 40px;
+        color: v.$txt_1;
+        margin: auto;
+    }
+    .identity--color {
+        position: absolute;
+        @include m.police--titres;
+        font-size: 40px;
+        color: v.$primaire;
+        background: linear-gradient(to left top, darken(v.$primaire, 5%), darken(v.$secondaire, 5%));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin: auto;
+        padding: 20px;
+    }
+}
+.blur {
+    filter: none;
+    animation: blur 2.9s linear;
+}
+html {
+    overflow-y: visible;
+    animation: scroll_off 2.5s;
+}

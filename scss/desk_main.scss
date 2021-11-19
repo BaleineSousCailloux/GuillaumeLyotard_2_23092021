@@ -1,9 +1,5 @@
-@use "./base/body";
-@use "./base/link";
-@use "./layouts/header";
-@use "./layouts/logo";
-@use "./layouts/footer";
-@import "./utils/mixins";
+@use "./utils/variables" as v;
+@use "./utils/mixins" as m;
 
 .main {
     display: flex;
@@ -28,12 +24,12 @@
             justify-content: center;
             align-items: flex-start;
             text-align: left;
-            background: linear-gradient(to bottom,$fond_3,$fond_1 10%);
+            background: linear-gradient(to bottom, v.$fond_3, v.$fond_1 10%);
             &__h1 {
                 font-size: xx-large;
                 font-weight: bold;
                 margin: 20px 100px 0 100px;
-                text-shadow: 2px 2px 5px $tertiaire;
+                text-shadow: 2px 2px 5px v.$tertiaire;
                 &::before {
                     content:'"';
                 }
@@ -45,7 +41,7 @@
                 font-size: x-large;
                 font-weight: 400;
                 margin: 20px 100px 0 100px;
-                text-shadow: 1px 1px 3px $tertiaire;
+                text-shadow: 1px 1px 3px v.$tertiaire;
             }
             &__btn {
                 display: none;
@@ -56,7 +52,7 @@
         width: 50%;
         height: 280px;
         margin: 60px 0 0 0;
-        background: linear-gradient(to bottom,$fond_3,$fond_1 10%);
+        background: linear-gradient(to bottom, v.$fond_3, v.$fond_1 10%);
         &__h3 {
             display: none;
         }
@@ -80,7 +76,7 @@
                 height: 24px;
                 width: 24px;
                 line-height: 24px;
-                background-color:lighten($primaire, 10%);
+                background-color:lighten(v.$primaire, 10%);
                 left: -12px;
             }
         }
@@ -92,7 +88,7 @@
             margin: -20px 100px 40px 100px;
             text-align: center;
             font-size: xx-large;
-            @include police--titres;
+            @include m.police--titres;
         }
         &__liste {
             flex-direction: row;

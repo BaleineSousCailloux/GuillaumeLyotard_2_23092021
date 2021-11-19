@@ -1,8 +1,8 @@
-@use "../utils/variables";
+@use "../utils/variables" as v;
 
 a {
     display: inline-block;
     text-decoration: none;
-    color: variables.$txt_1;
+    color: v.$txt_1;
     cursor: pointer;
 }
