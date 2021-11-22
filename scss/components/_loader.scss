@@ -129,7 +129,7 @@
     height: 100%;
     z-index: 4;
     opacity: 100%;
-    animation: loader_display 3s 200ms linear both;
+    animation: loader_display 3s linear both;
     .backlight {
         animation: backlight 1500ms linear infinite;
     }

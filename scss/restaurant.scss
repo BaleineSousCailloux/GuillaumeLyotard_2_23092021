@@ -10,9 +10,12 @@
 header {
     box-shadow: none;
     .home__btn {
-    position: absolute;
-    font-size: 24px;
-    left: 20px;
+        position: absolute;
+        font-size: 24px;
+        left: 20px;
+        .txt_for_achecker {
+        display: none;
+        }
     }
 }
 .resto {
